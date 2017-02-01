@@ -2,7 +2,7 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-activate :i18n
+activate :i18n, :langs => [:it, :en]
 
 set :url_root, 'https://www.florenceluxuryvillas.com'
 
