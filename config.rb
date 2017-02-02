@@ -2,12 +2,9 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-activate :i18n, :langs => [:it, :en]
-
-set :url_root, 'https://www.florenceluxuryvillas.com'
-
 ignore '/templates/*'
 
+activate :i18n, :langs => [:it, :en], :mount_at_root => false
 activate :asset_hash
 activate :directory_indexes
 activate :pagination
@@ -23,6 +20,8 @@ activate :external_pipeline,
   source: ".tmp/dist",
   latency: 1
 
+set :url_root, 'https://www.florenceluxuryvillas.com'
+
 configure :build do
   activate :minify_html do |html|
     html.remove_input_attributes = false
@@ -36,6 +35,27 @@ configure :development do
   activate :livereload
 end
 
+helpers do
+  # Returns a hash of localized paths for a given page
+  def localized_paths_for(page)
+    return {} if page.path == "index.html"
+    localized_paths = {}
+    (langs).each do |locale|
+      # Loop over all pages to find the ones using the same templates (proxied_to) for each language
+      sitemap.resources.each do |resource|
+        next if !resource.is_a?(Middleman::Sitemap::ProxyResource)
+        if resource.target_resource == page.target_resource
+          if resource.metadata[:options][:locale] == locale
+            localized_paths[locale] = resource.url
+            break
+          end
+        end
+      end
+    end
+
+    localized_paths
+  end
+end
 # dato.articles.each do |article|
 #   proxy(
 #     '/articles/#{article.slug}.html',
