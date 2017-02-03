@@ -1,0 +1,13 @@
+- url_prefix = I18n.locale == :it ? "/it" : "/en"
+
+.site-header
+  .site-header__inner
+    .nav--expand
+      .nav__item
+        = link_to "About", "#{url_prefix}/about/index.html", class:"site-header__item"
+      .nav__item
+        = link_to "Villa Strozzi", "#{url_prefix}/", class:"site-header__item"
+      .nav__item
+        = link_to "Torre Del Gallo", "#{url_prefix}/", class:"site-header__item"
+      .nav__item
+        = link_to "Contact Us", "#{url_prefix}/contact-us/index.html", class:"site-header__item"

@@ -2,9 +2,8 @@ doctype 5
 html lang=I18n.locale
   head = partial "partials/head"
   body
-    .site-header= "pippo"
-    .wrap--on-lap
-      = yield
-      = partial "partials/footer"
+    = partial "partials/site-header"
+    = yield
+    = partial "partials/footer"
       
     = partial "partials/js_includes"
