@@ -9,9 +9,9 @@
           = image_tag "https://fakeimg.pl/600x450/"
         .hero__heading
           .space--top-1
-            |Our Villas have been built in 1800
+            h1 Our Villas have been built in 1800
 
-.card-horizontal
+.wrap: .space--both-4: section.card-horizontal
   .card__item--image style="background-image: url('https://fakeimg.pl/650x550/')"
   .card__item--text
     .card__content
@@ -26,3 +26,11 @@
 
       .align--center
         = link_to "Read More", "#", class:"button card__content__button"
+
+.wrap: section.quote-section: .quote-section__inner
+  h3.quote-section__title
+    |Our Villas have been built in 1800
+  .quote-section__subtitle
+    |“Conosciamo i prati e le colline fiorentine da tempi molto antichi.
+    br
+      Da secoli valorizziamo i luoghi più preziosi della toscana”
