@@ -1,0 +1,11 @@
+.main-frame
+  +at-breakpoint(lap)
+    border-left: $canvas-size solid white
+    border-right: $canvas-size solid white
+    padding: $canvas-size 0
+    &:after
+      content: " "
+      background: white
+      +position(fixed, null null 0 null)
+      width: 100%
+      height: $canvas-size

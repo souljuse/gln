@@ -3,7 +3,8 @@ html lang=I18n.locale
   head = partial "partials/head"
   body
     = partial "partials/site-header"
-    = yield
-    = partial "partials/footer"
+    .main-frame
+      = yield
+      = partial "partials/footer"
       
     = partial "partials/js_includes"
