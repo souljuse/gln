@@ -1,11 +1,3 @@
-.card-horizontal
-
-.card__item
-  min-height: 500px
-  +at-breakpoint(desk)
-    display: inline-block
-    width: 50%
-    vertical-align: top
 
 .card__item--image
   @extend .card__item
@@ -24,9 +16,6 @@
 .card__content
   +center-vertically
   +horizontal-padding(2)
-  +at-breakpoint(lap)
-    +center
-    width: 50%
 
 .card__content__title, .card__content__subtitle
   text-align: center
@@ -45,3 +34,40 @@
   text-align-last: center
   +vertical-margin(2)
 
+.card--horizontal
+  
+  .card__item
+    min-height: 350px
+    +at-breakpoint(desk)
+      display: inline-block
+      width: 50%
+      vertical-align: top
+      min-height: 500px
+
+  .card__content
+    +at-breakpoint(lap)
+      +center
+      width: 50%
+
+.card--vertical
+  +margin-bottom(2)
+
+  .card__item
+    min-height: 400px
+    display: block
+    margin: 0 auto
+    +at-breakpoint(desk)
+      width: 80%
+
+  .card__item--image
+    +at-breakpoint(lap)
+      min-height: 220px
+    +at-breakpoint(desk)
+      min-height: 400px
+
+  .card__item--text
+    min-height: 350px
+
+  .card__content
+    +center-vertically
+    +horizontal-padding(2)

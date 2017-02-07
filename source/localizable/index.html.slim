@@ -4,37 +4,19 @@
 .hero
   .hero__body
     .hero__body__inner
-      .wrap--on-lap
+      .wrap
         .hero__image
           = image_tag "logo-gold.svg", alt:"Florence Luxury Villas", title: "logo Florence Luxury Villas"
         .hero__heading
           .space--top-1
             h1 Our Villas have been built in 1800
 
-.wrap: .space--both-4: section.card-horizontal
-  .card__item--image style="background-image: url('https://fakeimg.pl/650x550/')"
-  .card__item--text
-    .card__content
-      .card__content__title
-        | About
-      
-      .card__content__subtitle
-        h2.width-gradient Florence Luxury Villas
-      
-      .card__content__text
-        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+= partial "partials/card-horizontal"
 
-      .align--center
-        = link_to "Read More", "#", class:"button card__content__button"
+= partial "partials/quote"
 
-.wrap: section.quote-section: .quote-section__inner
-  h3.quote-section__title
-    |Our Villas have been built in 1800
-  .quote-section__subtitle
-    |“Conosciamo i prati e le colline fiorentine da tempi molto antichi.
-    br
-      Da secoli valorizziamo i luoghi più preziosi della toscana”
-  .space--top-2: .quote-section__author
-    .width-gradient Giovanni Santini
-  .quote-section__author-role
-    |Director
+.wrap: .space--both-4
+  .grid--center
+    - 2.times do
+      .grid__item.lap-6-12
+        = partial "partials/card-vertical"
