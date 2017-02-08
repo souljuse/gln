@@ -57,14 +57,6 @@ helpers do
   end
 end
 
-dato.buildings.each do |building|
-  proxy(
-    "/bulding.slug/index.html",
-    "templates/building.html",
-    locals: { building: building }
-    )
-
-end
 
 # dato.articles.each do |article|
 #   proxy(
@@ -82,14 +74,14 @@ end
 
 # MULTILANG SAMPLES
 
-# [:en, :it].each do |locale|
-#   I18n.with_locale(locale) do
-#     dato.aritcles.each do |article|
-#       I18n.locale = locale
-#       proxy "/#{locale}/articles/#{article.slug}/index.html", "/templates/article_template.html", :locals => { article: article }, ignore: true, locale: locale
-#     end
-#   end
-# end
+[:en, :it].each do |locale|
+  I18n.with_locale(locale) do
+    dato.buildings.each do |building|
+      I18n.locale = locale
+      proxy "/#{locale}/#{building.slug}/index.html", "/templates/building.html", locals: { building: building }, ignore: true, locale: locale
+    end
+  end
+end
 
 # [:en, :it].each do |locale|
 #   I18n.with_locale(locale) do
