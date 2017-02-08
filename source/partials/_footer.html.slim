@@ -1,3 +1,34 @@
 footer.footer: .footer__inner
+  .wrap: .grid--center.grid--middle
+    .grid__item.desk-4-12
+      .location: .location__inner
+        .location__title.width-gradient
+          |Villa Strozzi
+        .location__address
+          |Via di Berceto, 7
+          br
+          |50022 Rufina (FI) Italy
+    .grid__item.desk-4-12
+      .footer__logo
+        = image_tag "logo-brown.svg"
+      .footer__logo__text
+        |Florence Luxury Villas
+        br
+        |info@florenceluxuryvillas.com
+        br
+        |All Right Are Reserved ® 2017
+    .grid__item.desk-4-12
+      .location: .location__inner
+        .location__title.width-gradient
+          |Torre del Gallo
+        .location__address
+          |Via di Prova, 7
+          br
+          |50022 Greve in Chianti (FI) Italy
+
   .wrap
-    = link_to "Made with DatoCMS", "https://datocms.com"
+    .footer-copyright
+      |Design & Development by 
+      = link_to "Cantiere Creativo - ", "https://www.cantierecreativo.net/", alt:"Cantiere Creativo", title:"Realizzazione siti web Firenze"
+      |Built with Middleman and 
+      = link_to "DatoCMS", "https://datocms.com", alt:"DatoCMS", title:"DatoCMS"
