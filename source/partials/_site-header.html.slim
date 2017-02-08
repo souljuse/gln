@@ -4,10 +4,11 @@
   .site-header__inner
     .nav--expand
       .nav__item
-        = link_to "About", "#{url_prefix}/about/index.html", class:"site-header__item"
+        = link_to t('nav.about'), "#{url_prefix}/about/index.html", class:"site-header__item"
+        
+      - dato.buildings.each do |building|
+        .nav__item
+          = link_to building.name, "#{url_prefix}/#{building.slug}", class:"site-header__item"
+
       .nav__item
-        = link_to "Villa Strozzi", "#{url_prefix}/villa-strozzi/index.html", class:"site-header__item"
-      .nav__item
-        = link_to "Torre Del Gallo", "#{url_prefix}/", class:"site-header__item"
-      .nav__item
-        = link_to "Contact Us", "#{url_prefix}/contact-us/index.html", class:"site-header__item"
+        = link_to t('nav.contact'), "#{url_prefix}/contact-us/index.html", class:"site-header__item"
