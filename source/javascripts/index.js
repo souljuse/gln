@@ -11,5 +11,5 @@ $(document).ready(function(){
 
 $('#main-nav-toggler').on('click', function(e) {
   e.preventDefault();
-  $(this).parent().toggleClass('is-expanded');
+  $(this).parent().toggleClass('is-active');
 });

@@ -1,15 +1,15 @@
 - url_prefix = I18n.locale == :it ? "/it" : "/en"
 
-.site-header: .wrap
+.site-header: .wrap--on-desk
   .main-nav
-    = link_to "MENU", "#", class: "main-nav__link", id: "main-nav-toggler"
+    = link_to "MENU", "#", class: "main-nav__link hidden--on-desk", id: "main-nav-toggler"
     .main-nav__first-level
       .main-nav__first-level__item
         = link_to t('nav.about'), "#{url_prefix}/about/index.html", class:"main-nav__link"
           
-        - dato.buildings.each do |building|
-          .main-nav__first-level__item
-            = link_to building.name, "#{url_prefix}/#{building.slug}", class:"main-nav__link"
-
+      - dato.buildings.each do |building|
         .main-nav__first-level__item
-          = link_to t('nav.contact'), "#{url_prefix}/contact-us/index.html", class:"main-nav__link"
+          = link_to building.name, "#{url_prefix}/#{building.slug}", class:"main-nav__link"
+
+      .main-nav__first-level__item
+        = link_to t('nav.contact'), "#{url_prefix}/contact-us/index.html", class:"main-nav__link"

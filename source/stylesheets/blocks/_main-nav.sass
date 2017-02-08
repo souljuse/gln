@@ -7,13 +7,25 @@
 
 .main-nav__first-level
   display: none
+  background: white
 
 .main-nav__first-level__item
 
 .main-nav__link
+  +heading-font-family
   color: $primary-color
   display: block
   +vertical-padding(1)
-  font-weight: bold
+  text-transform: uppercase
 
 +at-breakpoint(desk)
+
+  .main-nav__first-level, .main-nav__first-level__item
+    +inline-block
+
+  .main-nav__link
+    color: $extra-light-grey
+    +horizontal-padding(2)
+    +horizontal-margin(1)
+    &:hover
+      color: $primary-color
