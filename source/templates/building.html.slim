@@ -14,7 +14,9 @@
             i.icon--cross
 
 .wrap
-  .bx-slider
-    
+  ul.bxslider
+    - building.images_gallery.each do |image|
+      li
+        = image_tag image.url
 
 = partial "partials/card-horizontal"

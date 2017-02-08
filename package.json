@@ -20,6 +20,7 @@
     "sass-loader": "4.0.2"
   },
   "dependencies": {
+    "bxslider": "^4.2.6",
     "jquery": "^3.1.1"
   }
 }

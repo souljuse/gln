@@ -1,6 +1,9 @@
 // This is where it all goes :)
-window.$ = require('jquery');
-require('jquery.bxslider.min.js');
+var jQuery = require("jquery");
+global.jQuery = jQuery;
+require('bxslider');
+
+var $ = jQuery;
 
 $(document).ready(function(){
   $('.bxslider').bxSlider();
