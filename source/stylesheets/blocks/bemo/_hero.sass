@@ -26,12 +26,13 @@
   color: $red-brown-color
 
 .hero__text
-  +heading-font-family
-  +font-size(gamma)
+  font-family: 'Sofia Light'
+  +font-size(delta)
   +margin-top(2)
   max-width: 750px
   margin-left: auto
   margin-right: auto
+  font-weight: normal
 
 .hero__actions
   +margin-top(2)
@@ -48,3 +49,12 @@
   .hero__heading
     +font-size(40px)
 
+.hero--villa
+  @extend .hero
+  background-color: $red-brown-color
+
+  .hero__subheading, .hero__heading, .hero__text
+    color: $white-color
+
+  .hero__subheading, .hero__heading
+    text-transform: uppercase
