@@ -43,7 +43,7 @@ ul.bxslider
   background: #fff
   .bx-pager, .bx-controls-auto
     position: absolute
-    bottom: -30px
+    bottom: 30px
     width: 100%
   .bx-loading
     min-height: 50px
@@ -83,12 +83,12 @@ ul.bxslider
     line-height: 0
   .bx-prev
     left: 10px
-    background: image-url('controls.png') no-repeat 0 -32px
+    background: image-url('arrow-left.svg') no-repeat
     &:hover, &:focus
       background-position: 0 0
   .bx-next
     right: 10px
-    background: image-url('controls.png') no-repeat -43px -32px
+    background: image-url('arrow-right.svg') no-repeat
     &:hover, &:focus
       background-position: -43px 0
   .bx-controls-direction a
@@ -96,8 +96,8 @@ ul.bxslider
     top: 50%
     margin-top: -16px
     outline: 0
-    width: 32px
-    height: 32px
+    width: 27px
+    height: 72px
     text-indent: -9999px
     z-index: 9999
     &.disabled

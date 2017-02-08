@@ -3,8 +3,10 @@ var jQuery = require("jquery");
 global.jQuery = jQuery;
 require('bxslider');
 
-jQuery(document).ready(function(){
-  jQuery('.bxslider').bxSlider();
+var $ = jQuery;
+
+$(document).ready(function(){
+  $('.bxslider').bxSlider();
 });
 
 $('#main-nav-toggler').on('click', function(e) {

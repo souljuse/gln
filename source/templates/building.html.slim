@@ -14,9 +14,10 @@
             i.icon--cross
 
 .wrap
-  ul.bxslider
-    li
-      = image_tag "https://fakeimg.pl/1920x1080/"
-    li
-      = image_tag "https://fakeimg.pl/1920x1080/"
+  .space--both-3
+    ul.bxslider
+      - building.images_gallery.each do |image|
+        li
+          = image_tag image.url
+
 = partial "partials/card-horizontal"
