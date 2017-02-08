@@ -1,0 +1,19 @@
+.main-nav
+  text-align: center
+
+  &.is-active
+    .main-nav__first-level
+      display: block
+
+.main-nav__first-level
+  display: none
+
+.main-nav__first-level__item
+
+.main-nav__link
+  color: $primary-color
+  display: block
+  +vertical-padding(1)
+  font-weight: bold
+
++at-breakpoint(desk)
