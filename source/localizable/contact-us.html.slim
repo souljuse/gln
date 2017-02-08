@@ -1,1 +1,4 @@
-h1 contatti
+- content_for(:head)
+  == dato_meta_tags(dato.contact)
+
+h1= dato.contact.title
