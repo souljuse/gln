@@ -3,3 +3,6 @@ it:
   nav:
     about: Chi siamo
     contact: Contatti
+
+  cta:
+    button-label: Contattaci
