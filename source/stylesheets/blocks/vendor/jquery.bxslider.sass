@@ -1,15 +1,15 @@
-/*/**
- *   bxSlider v4.2.5
- *   Copyright 2013-2015 Steven Wanderski
- *   Written while drinking Belgian ales and listening to jazz
- *
- *   Licensed under MIT (http://opensource.org/licenses/MIT)
+// *
+//  *   bxSlider v4.2.5
+//  *   Copyright 2013-2015 Steven Wanderski
+//  *   Written while drinking Belgian ales and listening to jazz
+//  *
+//  *   Licensed under MIT (http://opensource.org/licenses/MIT)
 
-/** VARIABLES 
- *===================================
-/** RESET AND LAYOUT
- *===================================
-*/
+// VARIABLES 
+// ===================================
+// RESET AND LAYOUT
+// ===================================
+
 .bx-wrapper
   position: relative
   margin: 0 auto 60px
@@ -29,12 +29,12 @@ ul.bxslider
   list-style: none
 
 .bx-viewport
-  /*/*fix other elements on the page moving (on Chrome)*/
+  // fix other elements on the page moving (on Chrome)
   -webkit-transform: translatez(0)
 
-/*/** THEME
- *===================================
-*/
+// THEME
+// ===================================
+
 .bx-wrapper
   -moz-box-shadow: 0 0 5px #ccc
   -webkit-box-shadow: 0 0 5px #ccc
@@ -47,7 +47,7 @@ ul.bxslider
     width: 100%
   .bx-loading
     min-height: 50px
-    background: url('images/bx_loader.gif') center center no-repeat #ffffff
+    background: image-url('bx_loader.gif') center center no-repeat #ffffff
     height: 100%
     width: 100%
     position: absolute
@@ -83,12 +83,12 @@ ul.bxslider
     line-height: 0
   .bx-prev
     left: 10px
-    background: url('images/controls.png') no-repeat 0 -32px
+    background: image-url('controls.png') no-repeat 0 -32px
     &:hover, &:focus
       background-position: 0 0
   .bx-next
     right: 10px
-    background: url('images/controls.png') no-repeat -43px -32px
+    background: image-url('controls.png') no-repeat -43px -32px
     &:hover, &:focus
       background-position: -43px 0
   .bx-controls-direction a
@@ -110,7 +110,7 @@ ul.bxslider
       width: 10px
       height: 11px
       outline: 0
-      background: url('images/controls.png') -86px -11px no-repeat
+      background: image-url('controls.png') -86px -11px no-repeat
       margin: 0 3px
       &:hover, &.active, &:focus
         background-position: -86px 0
@@ -120,7 +120,7 @@ ul.bxslider
       width: 9px
       height: 11px
       outline: 0
-      background: url('images/controls.png') -86px -44px no-repeat
+      background: image-url('controls.png') -86px -44px no-repeat
       margin: 0 3px
       &:hover, &.active, &:focus
         background-position: -86px -33px
@@ -144,16 +144,3 @@ ul.bxslider
       display: block
       font-size: .85em
       padding: 10px
-
-/*/* LOADER
-
-/* PAGER
-
-/* DIRECTION CONTROLS (NEXT / PREV)
-
-/* AUTO CONTROLS (START / STOP)
-
-/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT
-
-/* IMAGE CAPTIONS
-*/

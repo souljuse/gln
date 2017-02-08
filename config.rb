@@ -56,6 +56,16 @@ helpers do
     localized_paths
   end
 end
+
+dato.buildings.each do |building|
+  proxy(
+    "/bulding.slug/index.html",
+    "templates/building.html",
+    locals: { building: building }
+    )
+
+end
+
 # dato.articles.each do |article|
 #   proxy(
 #     '/articles/#{article.slug}.html',
