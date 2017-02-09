@@ -18,6 +18,13 @@
   +vertical-padding(1)
   text-transform: uppercase
 
+.main-nav__first-level__item--stick-left
+  @extend .main-nav__first-level__item
+
+.main-nav__first-level__item--stick-right
+  @extend .main-nav__first-level__item
+  color: $extra-light-grey
+
 +at-breakpoint(desk)
 
   .main-nav__first-level, .main-nav__first-level__item
@@ -29,3 +36,13 @@
     +horizontal-margin(1)
     &:hover
       color: $primary-color
+
+  .main-nav__first-level__item--stick-left
+    +position(fixed, null null null -38px)
+    top: 50%
+    transform: rotate(-90deg) translateX(20%)
+
+  .main-nav__first-level__item--stick-right
+    +position(fixed, null -92px null null)
+    top: 50%
+    transform: rotate(-90deg) translateX(12%)

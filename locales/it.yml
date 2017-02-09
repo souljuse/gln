@@ -3,6 +3,7 @@ it:
   nav:
     about: Chi siamo
     contact: Contatti
+    switch_language: View in English
 
   cta:
     button-label: Contattaci
