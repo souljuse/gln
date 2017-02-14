@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-down</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50.4459798%" y1="102.033743%" x2="50.4459798%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#834238" offset="0%"></stop>
+            <stop stop-color="#F1C8B7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="arrow-down" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <path d="M437.962682,80.8817722 L72.8072104,80.8817722 C149.085703,167.245052 209.892543,265.297569 253.185348,371.659108 C297.817562,265.025603 360.117372,166.960056 437.962682,80.8817722 Z M252.741481,461.756962 C204.030799,305.816731 118.139581,165.159058 1,50 L511,50 C391.479194,164.536127 303.332077,305.235329 252.741481,461.756962 Z"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32"
+   height="26.220999"
+   viewBox="0 0 32 26.220999"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="arrow-down.svg">
+  <metadata
+     id="metadata21">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>arrow-down</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1381"
+     id="namedview19"
+     showgrid="false"
+     fit-margin-top="1"
+     fit-margin-left="1"
+     fit-margin-right="1"
+     fit-margin-bottom="1"
+     inkscape:zoom="7.375"
+     inkscape:cx="7.1119181"
+     inkscape:cy="4.3298395"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title4">arrow-down</title>
+  <desc
+     id="desc6">Created with Sketch.</desc>
+  <defs
+     id="defs8">
+    <linearGradient
+       x1="0.5044598"
+       y1="1.0203375"
+       x2="0.5044598"
+       y2="0"
+       id="linearGradient-1">
+      <stop
+         stop-color="#834238"
+         offset="0%"
+         id="stop11" />
+      <stop
+         stop-color="#F1C8B7"
+         offset="100%"
+         id="stop13" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient-1"
+       id="linearGradient4149"
+       x1="232.06888"
+       y1="523.21906"
+       x2="232.06888"
+       y2="55.646084"
+       gradientTransform="scale(1.1129217,0.8985358)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient-1"
+       id="linearGradient4151"
+       x1="232.06888"
+       y1="523.21906"
+       x2="232.06888"
+       y2="55.646084"
+       gradientTransform="scale(1.1129217,0.8985358)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="Page-2"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+     transform="matrix(0.05882353,0,0,0.05882353,0.94117632,-1.9411761)">
+    <g
+       id="arrow-down"
+       style="fill:url(#linearGradient4151);fill-rule:nonzero">
+      <path
+         d="m 437.96268,80.881772 -365.15547,0 C 149.0857,167.24505 209.89254,265.29757 253.18535,371.65911 297.81756,265.0256 360.11737,166.96006 437.96268,80.881772 Z M 252.74148,461.75696 C 204.0308,305.81673 118.13958,165.15906 1,50 l 510,0 C 391.47919,164.53613 303.33208,305.23533 252.74148,461.75696 Z"
+         id="path17"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient4149)" />
+    </g>
+  </g>
+</svg>

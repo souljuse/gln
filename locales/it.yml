@@ -4,6 +4,11 @@ it:
     about: Chi siamo
     contact: Contatti
     switch_language: View in English
-
   cta:
     button-label: Contattaci
+
+  read_more: "Leggi di più"
+
+  sections:
+    apartments: "Villa Strozzi è composta da tre appartamenti"
+    apartment: "appartamento"

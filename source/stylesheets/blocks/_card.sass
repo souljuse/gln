@@ -38,6 +38,10 @@
   +vertical-margin(2)
 
 .card--horizontal
+  max-width: 500px
+  margin: 0 auto
+  +at-breakpoint(desk)
+    max-width: none
 
   .card__item
     min-height: 350px
@@ -74,3 +78,10 @@
   .card__content
     +center-vertically
     +horizontal-padding(2)
+
+.card--horizontal--right
+  @extend .card--horizontal
+  direction: rtl
+
+  .card__item--text
+    direction: ltr

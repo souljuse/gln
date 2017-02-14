@@ -81,6 +81,13 @@ end
       proxy "/#{locale}/#{building.slug}/index.html", "/templates/building.html", locals: { building: building }, ignore: true, locale: locale
     end
   end
+
+  I18n.with_locale(locale) do
+    dato.apartments.each do |apartment|
+      I18n.locale = locale
+      proxy "/#{locale}/#{apartment.slug}/index.html", "/templates/apartment.html", locals: { apartment: apartment }, ignore: true, locale: locale
+    end
+  end
 end
 
 # [:en, :it].each do |locale|

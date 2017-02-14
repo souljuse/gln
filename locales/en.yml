@@ -7,3 +7,9 @@ en:
 
   cta:
     button-label: Get in touch
+
+  read_more: "Read more"
+
+  sections:
+    apartments: "Villa Strozzi is composed by three apartments"
+    apartment: "apartment"

@@ -1,17 +1,16 @@
-.hero--villa
+.hero--villa style="background-image: url('#{building.cover.url}')"
   .hero__body
     .hero__body__inner
       .wrap
         .hero__subheading the complex
         .hero__heading
           .space--top-1
-            h1 Villa Strozzi
+            h1 = building.name
         .hero__text
-          |Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis. Integer ac enim pellentesque, adipiscing metus id, pharetra odio.
+          = building.description
 
         .space--top-3: .align--center
-          .beta
-            i.icon--cross
+          = image_tag 'arrow-down.svg'
 
 .wrap
   .space--both-3
@@ -20,4 +19,45 @@
         li
           = image_tag image.url
 
-= partial "partials/card-horizontal"
+
+.wrap
+  section.section: .section__inner
+    .section__title
+      = I18n.t("sections.apartments")
+
+- apartments = dato.apartments.select {|apartment| apartment.building == building}
+- if apartments.any?
+- apartments.each_with_index do |apartment, i|
+  - if i.even?
+    .wrap: .space--both-4: section.card--horizontal
+      .card__item--image style="background-image: url('#{apartment.featured_image.url}')"
+      .card__item--text
+        .card__content
+          .card__content__title
+            - index = i+1
+            - index_romanized = romanize(index);
+            = "#{I18n.t("sections.apartment")} #{index_romanized}"
+          
+          .card__content__subtitle
+            h2.width-gradient = apartment.name
+          
+          .card__content__text
+            = apartment.abstract
+          .align--center
+            = link_to I18n.t("read_more"), "/#{I18n.locale}/#{apartment.slug}/index.html", class:"button card__content__button"
+  - else
+    .wrap: .space--both-4: section.card--horizontal--right
+      .card__item--image style="background-image: url('/images/villa.jpg')"
+      .card__item--text
+        .card__content
+          .card__content__title
+            | About
+          
+          .card__content__subtitle
+            h2.width-gradient Florence Luxury Villas
+          
+          .card__content__text
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+
+          .align--center
+            = link_to I18n.t("read_more"), "/#{I18n.locale}/#{apartment.slug}/index.html", class:"button card__content__button"
