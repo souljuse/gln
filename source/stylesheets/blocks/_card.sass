@@ -112,15 +112,17 @@
     min-height: 400px
 
   .card__item--map
-    display: inline-block
-    width: 70%
-    vertical-align: top
+    +at-breakpoint(desk)
+      display: inline-block
+      width: 70%
+      vertical-align: top
   .card__item--label
     position: relative
-    width: 30%
     text-align: left
-    display: inline-block
-    vertical-align: top
+    +at-breakpoint(desk)
+      width: 30%
+      display: inline-block
+      vertical-align: top
   .card__item--label
     direction: ltr
     text-align: left
