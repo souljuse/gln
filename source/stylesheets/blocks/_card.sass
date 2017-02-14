@@ -22,6 +22,15 @@
   +position(absolute, 0 0 null null)
   +at-breakpoint(desk)
     +position(absolute, auto 0 0 null)
+
+.card__item--text__bg--right
+  +position(absolute, 50% 0 null null)
+  transform: translateY(-50%)
+
+.card__item--text__bg--left
+  +position(absolute, 50% null null 0)
+  transform: translateY(-50%)
+
 .card__content
   +center-vertically
   +horizontal-padding(2)
@@ -84,8 +93,10 @@
     min-height: 350px
 
   .card__content
-    +center-vertically
+    +center
     +horizontal-padding(2)
+    min-width: 80%
+
 
 .card--horizontal--right
   @extend .card--horizontal

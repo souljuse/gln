@@ -12,8 +12,7 @@
             h1 Our Villas have been built in 1800
 
         .space--top-3: .align--center
-          .beta
-            i.icon--cross
+          = image_tag 'arrow-down.svg'
 
 = partial "partials/card-horizontal"
 
@@ -21,8 +20,8 @@
 
 .wrap: .space--both-4
   .grid--center
-    - 2.times do
+    - dato.buildings.each_with_index do |building, i|
       .grid__item.lap-6-12
-        = partial "partials/card-vertical"
+        = partial "partials/card-vertical", locals: {building: building, index: i}
 
 = partial "partials/get-in-touch"

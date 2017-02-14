@@ -1,15 +1,21 @@
 section.card--vertical
   .card__item--image style="background-image: url('/images/esterno.jpg')"
   .card__item--text
+    - if index.even?
+      .card__item--text__bg--right
+        = image_tag 'logo-r-left.svg'
+    - else
+      .card__item--text__bg--left
+        = image_tag 'logo-r-right.svg'
     .card__content
       .card__content__title
         | About
       
       .card__content__subtitle
-        h2.width-gradient Florence Luxury Villas
+        h2.width-gradient = building.name
       
       .card__content__text
-        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        = building.abstract
 
       .align--center
-        = link_to "Read More", "#", class:"button card__content__button"
+        = link_to "Read More", "/#{I18n.locale}/#{building.slug}/index.html", class:"button card__content__button"
