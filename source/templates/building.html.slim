@@ -17,7 +17,7 @@
     ul.bxslider
       - building.images_gallery.each do |image|
         li
-          = image_tag image.url
+          = image_tag image.url(w: 1400)
 
 
 .wrap
@@ -32,6 +32,10 @@
     .wrap: .space--both-4: section.card--horizontal
       .card__item--image style="background-image: url('#{apartment.featured_image.url}')"
       .card__item--text
+        .card__item--text__bg--up
+          = image_tag 'logo-right.svg'
+        .card__item--text__bg--down
+          = image_tag 'logo-left.svg'
         .card__content
           .card__content__title
             - index = i+1
@@ -45,19 +49,31 @@
             = apartment.abstract
           .align--center
             = link_to I18n.t("read_more"), "/#{I18n.locale}/#{apartment.slug}/index.html", class:"button card__content__button"
+          .space--top-2: .align--center
+            - if apartment.available == true
+              .available= I18n.t("sections.available")
+            - else
+              .unavailable= I18n.t("sections.unavailable")
+
   - else
     .wrap: .space--both-4: section.card--horizontal--right
       .card__item--image style="background-image: url('/images/villa.jpg')"
       .card__item--text
         .card__content
           .card__content__title
-            | About
+            - index = i+1
+            - index_romanized = romanize(index);
+            = "#{I18n.t("sections.apartment")} #{index_romanized}"
           
           .card__content__subtitle
-            h2.width-gradient Florence Luxury Villas
+            h2.width-gradient = apartment.name
           
           .card__content__text
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-
+            = apartment.abstract
           .align--center
             = link_to I18n.t("read_more"), "/#{I18n.locale}/#{apartment.slug}/index.html", class:"button card__content__button"
+          .space--top-2: .align--center
+            - if apartment.available == true
+              .available= I18n.t("sections.available")
+            - else
+              .unavailable= I18n.t("sections.unavailable")

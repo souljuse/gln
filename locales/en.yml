@@ -13,3 +13,5 @@ en:
   sections:
     apartments: "Villa Strozzi is composed by three apartments"
     apartment: "apartment"
+    available: "- Currently available -"
+    unavailable: "- Currently unavailable -"
