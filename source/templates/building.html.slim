@@ -57,7 +57,7 @@
 
   - else
     .wrap: .space--both-4: section.card--horizontal--right
-      .card__item--image style="background-image: url('/images/villa.jpg')"
+      .card__item--image style="background-image: url('#{apartment.featured_image.url}')"
       .card__item--text
         .card__content
           .card__content__title
@@ -77,3 +77,14 @@
               .available= I18n.t("sections.available")
             - else
               .unavailable= I18n.t("sections.unavailable")
+
+  .wrap: .space--both-4: section.card--horizontal--map
+    .card__item--map#map data-lat="#{building.location.latitude}" data-lon="#{building.location.longitude}"
+    .card__item--label
+      .card__item--label__content
+        .card__item--label__content__title
+          h2.width-gradient = building.name
+        .space--top-2.card__item--label__content__text
+          .formatted-content= building.contact
+
+
