@@ -5,7 +5,7 @@
   .hero__body
     .hero__body__inner
       .wrap
-        .hero__subheading the complex
+        .hero__subheading = I18n.t("sections.subheading")
         .hero__heading
           .space--top-1
             h1 = building.name
@@ -26,7 +26,10 @@
 .wrap
   section.section: .section__inner
     .section__title
-      = I18n.t("sections.apartments")
+      - if I18n.locale == :it
+        = "#{I18n.t("sections.apartments_section")}#{building.name}"
+      - else
+        = "#{building.name}#{I18n.t("sections.apartments_section")}"
 
 - apartments = dato.apartments.select {|apartment| apartment.building == building}
 - if apartments.any?
@@ -46,7 +49,7 @@
             = "#{I18n.t("sections.apartment")} #{index_romanized}"
           
           .card__content__subtitle
-            h2.width-gradient = apartment.name
+            h2.with-gradient = apartment.name
           
           .card__content__text
             = apartment.abstract
@@ -69,7 +72,7 @@
             = "#{I18n.t("sections.apartment")} #{index_romanized}"
           
           .card__content__subtitle
-            h2.width-gradient = apartment.name
+            h2.with-gradient = apartment.name
           
           .card__content__text
             = apartment.abstract
@@ -86,7 +89,7 @@
     .card__item--label
       .card__item--label__content
         .card__item--label__content__title
-          h2.width-gradient = building.name
+          h2.with-gradient = building.name
         .space--top-2.card__item--label__content__text
           .formatted-content= building.contact
 

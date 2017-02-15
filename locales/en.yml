@@ -11,20 +11,11 @@ en:
   read_more: "Read more"
 
   sections:
-    villa:
-      subheading: "The complex"
-      apartments_section: "Villa Strozzi is composed by three apartments"
-      characteristics: "Characteristics"
-      ready_to_use: "Ready to use"
-      services: "Services"
-
-    torre:
-      subheading: "The complex"
-      apartments_section: "Villa Torre San Gallo is composed by three apartments"
-      characteristics: "Characteristics"
-      ready_to_use: "Ready to use"
-      services: "Services"
-
+    subheading: "The complex"
+    characteristics: "Characteristics"
+    ready_to_use: "Ready to use"
+    services: "Services"
+    apartments_section: " is composed by three apartments"
     apartment_services: "'s apartment services"
     apartment: "apartment"
     available: "- Currently Available -"

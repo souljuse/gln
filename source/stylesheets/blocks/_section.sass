@@ -1,7 +1,10 @@
 .section--specs
   background-color: $white-color
+  position: relative
 
 .section__inner
+  +padding(4)
+  position: relative
 
 .section__title
   +heading-font-family
@@ -10,3 +13,24 @@
   text-align: center
   max-width: 500px
   margin: 0 auto
+
+.section__specs
+  box-sizing: border-box
+  vertical-align: top
+  +at-breakpoint(desk)
+    display: inline-block
+    width: 50%
+    +padding(3)
+
+.section--specs__title
+  text-align: center
+  +heading-font-family
+  text-transform: uppercase
+  +font-size(delta)
+  +vertical-padding(2)
+
+.section--specs-bg
+  +center
+
+
+
