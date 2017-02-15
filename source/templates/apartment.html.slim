@@ -1,9 +1,61 @@
 - content_for(:head)
   == dato_meta_tags(apartment)
 
+.hero--apartment
+  .hero__body
+    .hero__body__inner
+      .wrap
+        .hero__logo
+          = image_tag 'logo-baige.svg'
+        .hero__subheading = apartment.building.name
+        .hero__heading
+          .space--top-1
+            h1 = apartment.name
+        .hero__text
+          = apartment.description
 
-// hero
+        .space--top-3: .align--center
+          = image_tag 'arrow-down.svg'
 
-// gallery
+.wrap
+  .space--both-3
+    ul.bxslider
+      - apartment.images_gallery.each do |image|
+        li
+          = image_tag image.url(w: 1400)
 
-// features
+.wrap
+  section.section: .section__inner
+    .section__title
+      - if I18n.locale == :it
+        = "#{I18n.t("sections.apartment_services")}#{apartment.name}"
+      - else
+        = "#{apartment.name}#{I18n.t("sections.apartment_services")}"
+
+.wrap: .space--both-4: section.card--horizontal--right
+  .card__item--image style="background-image: url('#{apartment.featured_image.url}')"
+  .card__item--text
+    .card__content
+      .card__content__title
+
+      
+      .card__content__subtitle
+        h2.width-gradient = apartment.name
+      
+      .card__content__text
+        = apartment.abstract
+      .align--center
+        = link_to I18n.t("read_more"), "/#{I18n.locale}/#{apartment.slug}/index.html", class:"button card__content__button"
+      .space--top-2: .align--center
+        - if apartment.available == true
+          .available= I18n.t("sections.available")
+        - else
+          .unavailable= I18n.t("sections.unavailable")
+
+.wrap
+  section.section--specs: .section__inner
+    .grid--center
+      .grid__item.lap-6-12
+        = apartment.specifications_text
+      .grid__item.lap-6-12
+        = apartment.specifications_spec

@@ -10,7 +10,21 @@ it:
   read_more: "Leggi di più"
 
   sections:
-    apartments: "Villa Strozzi è composta da tre appartamenti"
+    villa:
+      subheading: "Il complesso"
+      apartments_section: "Villa Strozzi è compasta da tre appartamenti"
+      characteristics: "Caratteristiche"
+      ready_to_use: "Pronto all'uso"
+      services: "Servizi"
+
+    torre:
+      subheading: "Il complesso"
+      apartments_section: "Villa Torre San Gallo è composta da tre appartamenti"
+      characteristics: "Caratteristiche"
+      ready_to_use: "Pronto all'uso"
+      services: "Servizi"
+
+    apartment_services: "Servizi dell'appartamento "
     apartment: "appartamento"
     available: "- Attualmente disponibile -"
     unavailable: "- Attualmente non disponibile -"
