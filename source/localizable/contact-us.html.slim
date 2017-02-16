@@ -1,4 +1,38 @@
 - content_for(:head)
   == dato_meta_tags(dato.contact)
 
-h1= dato.contact.title
+.hero--contacts
+  .hero__body
+    .hero__body__inner
+      .wrap
+        .hero__logo
+          = image_tag 'logo-baige.svg'
+          h1.hero__subheading = dato.contact.title
+
+        .space--top-4: .align--left: form.form
+          fieldset
+            .grid
+              .grid__item.desk-6-12
+                .form__field
+                  input.form__input type="text" placeholder= I18n.t("form.name") name="Name"
+
+                .form__field
+                  input.form__input type="email" placeholder= I18n.t("form.email") name="Email"
+
+                .form__field
+                  input.form__input type="tel" placeholder= I18n.t("form.phone") name="Phone"
+                  
+                .form__field
+                  input.form__input type="text" placeholder= I18n.t("form.apartment") name="Apartment"
+              .grid__item.desk-6-12
+                .form__field
+                  label.input__label.smallprint = I18n.t("form.message")
+                  textarea.form__input rows="7" name="Message"
+                .grid
+                  .grid__item.width-6-12
+                    label.input--checkbox
+                      input type="checkbox"
+                      span.input__label.smallprint= I18n.t("form.policy")
+                  .grid__item.width-6-12
+                    .align--right: .form__field
+                      a.button href="#" type="submit" = I18n.t("form.send")

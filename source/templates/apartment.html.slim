@@ -38,8 +38,9 @@
       = image_tag 'logo-baige.svg'
     .section__inner
       .section--specs__title.with-gradient = I18n.t("sections.characteristics")
-      .space--bottom-2: .section__specs
-        .formatted-content= apartment.specifications_text
+      .section__specs
+        .space--bottom-2
+          .formatted-content= apartment.specifications_text
       .section__specs
         .formatted-content= apartment.specifications_spec
 
@@ -54,3 +55,12 @@
       .section__specs
         .section--specs__title.with-gradient = I18n.t("sections.services")
         .formatted-content= apartment.services
+
+.wrap: .space--both-4: section.card--horizontal--map
+  .card__item--map#map data-lat="#{apartment.location.latitude}" data-lon="#{apartment.location.longitude}"
+  .card__item--label
+    .card__item--label__content
+      .card__item--label__content__title
+        h2.with-gradient = apartment.name
+      .space--top-2.card__item--label__content__text
+        .formatted-content= apartment.contact

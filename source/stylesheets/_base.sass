@@ -43,15 +43,26 @@ h1, h2, h3, h4, h5, h6
   box-sizing: border-box
   width: 100%
   padding: 10px
-  border: 1px solid $border-color
+  border: none
+  border-bottom: 1px solid $border-color
+  background: transparent
   -webkit-appearance: none
   border-radius: 0
   background-image: none
   transition: border 0.2s $material-ease
   +font-size(regular)
+  font-family: $sofia
+  color: $base-body-color
 
   &[disabled]
     opacity: 0.9
+
+::-webkit-input-placeholder
+  color: $base-body-color
+  +font-size(smallprint)
+
+textarea
+  border: 1px solid $border-color
 
 *:focus
   outline: 0

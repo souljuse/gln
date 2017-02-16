@@ -19,3 +19,12 @@ it:
     apartment: "appartamento"
     available: "- Attualmente disponibile -"
     unavailable: "- Attualmente non disponibile -"
+
+  form:
+    name: "Nome e Cognome"
+    email: "Email"
+    phone: "Telefono"
+    apartment: "Appartamento"
+    message: "Messaggio"
+    send: "Invia"
+    policy: "Accetta la Privacy Policy"

@@ -20,3 +20,12 @@ en:
     apartment: "apartment"
     available: "- Currently Available -"
     unavailable: "- Currently Unavailable -"
+
+  form:
+    name: "Name and Lastname"
+    email: "Email"
+    phone: "Phone"
+    apartment: "Apartment"
+    message: "Message"
+    send: "Send"
+    policy: "Accept the Privacy Policy"
