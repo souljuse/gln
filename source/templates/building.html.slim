@@ -7,15 +7,15 @@
       .wrap
         .hero__subheading = I18n.t("sections.subheading")
         .hero__heading
-          .space--top-1
+          .space--top-2
             h1 = building.name
         .hero__text
           = building.description
 
         .space--top-3: .align--center
-          = image_tag 'arrow-down.svg'
+          i.icon--arrow-down.with-gradient
 
-.wrap
+.wrap--on-desk
   .space--both-3
     ul.bxslider
       - building.images_gallery.each do |image|

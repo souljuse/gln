@@ -11,12 +11,23 @@ $(document).ready(function(){
   var frameHeight = $(window).height();
   $('.main-frame').css('min-height', frameHeight);
 
-  var heroHeight = $('.hero').height();
+  var windowHeight = $(window).height();
+
+  if ($(window).width() >= 1024) {
+    var windowHeight = $(window).height();
+    var headerHeight = $('.header').height();
+    var heroHeight = (windowHeight-96);
+    console.log(heroHeight);
+    $('.hero__body').height(heroHeight);
+  }
+
   var top = heroHeight/2;
   $('.main-nav__first-level__item--stick-left').css('top', top);
   $('.main-nav__first-level__item--stick-right').css('top', top);
 
 
+
+//form submission with FormSpree
   $("#contacts-form").submit(function(e) {
 
       var url = "https://formspree.io/t.valentini@cantierecreativo.net";

@@ -1,6 +1,10 @@
 .quote-section
   text-align: center
 .quote-section__inner
+  +at-breakpoint(desk)
+    +vertical-padding(4)
+  +at-breakpoint(medium)
+    +vertical-padding(8)
 
 .quote-section__title
   +heading-font-family
@@ -8,6 +12,8 @@
   color: $red-brown-color
 
 .quote-section__subtitle
+  +vertical-margin(3)
+  +font-size(delta)
 
 .quote-section__author
   text-transform: uppercase
