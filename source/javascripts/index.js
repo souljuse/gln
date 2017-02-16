@@ -8,6 +8,13 @@ var $ = jQuery;
 $(document).ready(function(){
   $('.bxslider').bxSlider();
 
+  var frameHeight = $(window).height();
+  $('.main-frame').css('min-height', frameHeight);
+
+  var heroHeight = $('.hero').height();
+  var top = heroHeight/2;
+  $('.main-nav__first-level__item--stick-left').css('top', top);
+  $('.main-nav__first-level__item--stick-right').css('top', top);
 
 });
 
