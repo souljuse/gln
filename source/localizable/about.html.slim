@@ -1,4 +1,17 @@
 - content_for(:head)
   == dato_meta_tags(dato.about)
 
-h1= dato.about.title
+.hero.hero--about
+  .hero__body
+    .hero__body__inner
+      .wrap
+        .hero__subheading = I18n.t("about.subheading")
+        .hero__heading
+          .space--top-1
+            h1 = dato.about.title
+        .hero__text
+          = dato.about.description
+
+        .space--top-3: .align--center
+          i.icon--arrow-down.with-gradient
+= partial "partials/get-in-touch"

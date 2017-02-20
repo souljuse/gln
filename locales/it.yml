@@ -19,6 +19,8 @@ it:
     apartment: "appartamento"
     available: "- Attualmente disponibile -"
     unavailable: "- Attualmente non disponibile -"
+  about: 
+    subheading: "Chi siamo"
 
   form:
     name: "Nome e Cognome"

@@ -20,6 +20,8 @@ en:
     apartment: "apartment"
     available: "- Currently Available -"
     unavailable: "- Currently Unavailable -"
+  about: 
+    subheading: "About us"
 
   form:
     name: "Name and Lastname"

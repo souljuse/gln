@@ -75,8 +75,11 @@
   .hero__heading
     letter-spacing: 4px
     +at-breakpoint(medium)
-      font-size: 100px
+      font-size: 80px
       letter-spacing: 8px
+      max-width: 850px
+    +at-breakpoint(wall)
+      font-size: 100px
 
   .hero__subheading
     text-transform: uppercase
@@ -98,3 +101,16 @@
 
   .hero__body
     background-color: rgba(131,66,56,0.91)
+
+.hero--about
+  @extend .hero--villa
+  background-image: image-url('pattern-white.jpg')
+  .hero__subheading, .hero__heading, .hero__text
+    color: $red-brown-color
+
+  .hero__heading
+    +font-size(beta)
+    +at-breakpoint(medium)
+      +font-size(alpha)
+    +at-breakpoint(wall)
+      font-size: 50px
