@@ -3,17 +3,21 @@
   position: relative
 
 .section__inner
-  +padding(4)
+  +vertical-padding(4)
   position: relative
+  +at-breakpoint(tab)
+    +padding(4)
 
 .section__title
   +heading-font-family
-  +font-size(alpha)
+  +font-size(beta)
   color: $red-brown-color
   text-align: center
   max-width: 550px
   line-height: 1.3em
   margin: 0 auto
+  +at-breakpoint(tab)
+    +font-size(alpha)
 
 .section__specs
   box-sizing: border-box
@@ -31,7 +35,9 @@
   +vertical-padding(2)
 
 .section--specs-bg
-  +center
-
+  +position(absolute, 50% null null 50%)
+  transform: translate(-50%, -50%)
+  img
+    min-width: 250px
 
 

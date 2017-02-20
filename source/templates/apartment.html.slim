@@ -5,7 +5,7 @@
   .hero__body
     .hero__body__inner
       .wrap
-        .hero__logo
+        .space--top-4.hero__logo
           = image_tag 'logo-baige.svg'
         .hero__subheading = apartment.building.name
         .hero__heading
@@ -17,7 +17,7 @@
         .space--top-3: .align--center
           = image_tag 'arrow-down.svg'
 
-.wrap
+.wrap--on-desk
   .space--both-3
     ul.bxslider
       - apartment.images_gallery.each do |image|
@@ -32,23 +32,24 @@
       - else
         = "#{apartment.name}#{I18n.t("sections.apartment_services")}"
 
-.space--both-3.wrap
+.space--both-3: .wrap--on-lap
   section.section--specs
     .section--specs-bg
       = image_tag 'logo-baige.svg'
     .section__inner
-      .section--specs__title.with-gradient = I18n.t("sections.characteristics")
-      .section__specs
-        .space--bottom-2
-          .formatted-content= apartment.specifications_text
-      .section__specs
-        .formatted-content= apartment.specifications_spec
+      .wrap
+        .section--specs__title.with-gradient = I18n.t("sections.characteristics")
+        .section__specs
+          .space--bottom-2
+            .formatted-content= apartment.specifications_text
+        .section__specs
+          .formatted-content= apartment.specifications_spec
 
-.space--both-3.wrap
+.space--both-3: .wrap--on-lap
   section.section--specs
     .section--specs-bg
       = image_tag 'logo-baige.svg'
-    .section__inner
+    .section__inner: .wrap
       .section__specs
         .section--specs__title.with-gradient = I18n.t("sections.ready_to_use")
         .formatted-content= apartment.ready_to_use

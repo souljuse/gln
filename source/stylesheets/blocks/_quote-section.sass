@@ -1,6 +1,7 @@
 .quote-section
   text-align: center
 .quote-section__inner
+  +vertical-padding(4)
   +at-breakpoint(desk)
     +vertical-padding(4)
   +at-breakpoint(medium)
@@ -8,8 +9,10 @@
 
 .quote-section__title
   +heading-font-family
-  +font-size(alpha)
   color: $red-brown-color
+  +font-size(beta)
+  +at-breakpoint(tab)
+    +font-size(alpha)
 
 .quote-section__subtitle
   +vertical-margin(3)

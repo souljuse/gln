@@ -18,10 +18,16 @@
 
 .card__item--text__bg--up
   +position(absolute, 0 null null 0)
+  img
+    height: 200px
+    +at-breakpoint(lap)
+      height: 100%
 .card__item--text__bg--down
-  +position(absolute, 0 0 null null)
-  +at-breakpoint(desk)
-    +position(absolute, auto 0 0 null)
+  +position(absolute, auto 0 0 null)
+  img
+    height: 200px
+    +at-breakpoint(lap)
+      height: 100%
 
 .card__item--text__bg--right
   +position(absolute, 50% 0 null null)

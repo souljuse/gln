@@ -6,7 +6,7 @@
     .hero__body__inner
       .wrap
         .hero__image
-          = image_tag "logo-gold.svg", alt:"Florence Luxury Villas", title: "logo Florence Luxury Villas"
+          .space--top-2= image_tag "logo-gold.svg", alt:"Florence Luxury Villas", title: "logo Florence Luxury Villas"
         .hero__heading
           .space--top-1
             h1 Our Villas have been built in 1800
@@ -21,7 +21,8 @@
 .wrap: .space--both-4
   .grid--center
     - dato.buildings.each_with_index do |building, i|
-      .grid__item.lap-6-12
-        = partial "partials/card-vertical", locals: {building: building, index: i}
+      - 2.times do
+        .grid__item.lap-6-12
+          = partial "partials/card-vertical", locals: {building: building, index: i}
 
 = partial "partials/get-in-touch"

@@ -5,15 +5,19 @@
   background-size: cover
   position: relative
   i.icon--arrow-down
-    +font-size(alpha)
+    +font-size(beta)
     position: absolute
     bottom: 10px
+    left: 50%
+    transform: translateX(-50%)
+    +at-breakpoint(tab)
+      +font-size(alpha)
 
 .hero__body
   display: table
   width: 100%
   text-align: center
-  min-height: 500px
+  min-height: 660px
   +at-breakpoint(medium)
     min-height: 600px
 
@@ -25,7 +29,7 @@
 
 .hero__heading
   +heading-font-family
-  +font-size(alpha)
+  +font-size(beta)
   line-height: 1.2
   margin-left: auto
   margin-right: auto
