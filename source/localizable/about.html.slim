@@ -6,12 +6,7 @@
     .hero__body__inner
       .wrap
         .hero__subheading = I18n.t("about.subheading")
-        .hero__heading
-          .space--top-1
-            h1 = dato.about.title
-        .hero__text
-          = dato.about.description
-
-        .space--top-3: .align--center
-          i.icon--arrow-down.with-gradient
-= partial "partials/get-in-touch"
+        .hero__heading: .space--top-1: h1 = dato.about.title
+        .hero__text= dato.about.description
+    
+= partial "partials/cta", locals: {text: dato.homepage.cta_text}
