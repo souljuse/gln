@@ -25,16 +25,21 @@
                     input.form__input type="tel" placeholder= I18n.t("form.phone") name="Phone"
                     
                   .form__field
-                    input.form__input type="text" required="true" placeholder= I18n.t("form.apartment") name="Apartment"
+                    input.form__input type="text" placeholder= I18n.t("form.apartment") name="Apartment"
+                    
               .grid__item.desk-6-12
                 .form__field
                   label.input__label.smallprint = I18n.t("form.message")
                   textarea.form__input rows="7" required="true" name="Message"
+                  
                 .grid
                   .grid__item.width-6-12
                     label.input--checkbox
                       input type="checkbox" required="true"
-                      span.input__label.smallprint = I18n.t("form.policy")
+                      span.input__label.smallprint
+                        => I18n.t("form.policy")
+                        = link_to "Privacy Policy", "//www.iubenda.com/privacy-policy/#{t('iubenda_id')}", class: "iubenda-nostyle no-brand iubenda-embed"
+                  
                   .grid__item.width-6-12
                     .align--right: .form__field
                       button.button type="submit" required="true" = I18n.t("form.send")
