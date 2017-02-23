@@ -1,11 +1,5 @@
 .wrap: section.quote-section: .quote-section__inner
-  h3.quote-section__title
-    |Our Villas have been built in 1800
-  .quote-section__subtitle
-    |“Conosciamo i prati e le colline fiorentine da tempi molto antichi.
-    br
-      Da secoli valorizziamo i luoghi più preziosi della toscana”
-  .space--top-2: .quote-section__author
-    .with-gradient Giovanni Santini
-  .quote-section__author-role
-    |Director
+  h3.quote-section__title= dato.homepage.quote_title
+  .quote-section__subtitle= dato.homepage.quote_text
+  .space--top-2: .quote-section__author: h4.with-gradient= dato.homepage.quote_author
+  .quote-section__author-role= dato.homepage.quote_author_role
