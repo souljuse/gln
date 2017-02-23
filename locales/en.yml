@@ -3,7 +3,7 @@ en:
   nav:
     about: About
     contact: Contact
-    switch_language: It
+    switch_language: Italian
 
   cta:
     button-label: Get in touch
@@ -13,15 +13,24 @@ en:
   sections:
     subheading: "The complex"
     characteristics: "Characteristics"
-    ready_to_use: "Ready to use"
+    facilities: "Ready to use"
     services: "Services"
-    apartments_section: " is composed by three apartments"
+    apartments_section: "is composed by %{count} apartments"
     apartment_services: "'s apartment services"
     apartment: "apartment"
     available: "- Currently Available -"
     unavailable: "- Currently Unavailable -"
-  about: 
+
+  building:
+    distance: "%{count} km from the city center."
+
+  about:
     subheading: "About us"
+
+  footer:
+    credits_name: "Lean Panda"
+    credits_url: "https://www.leanpanda.com/"
+    credits_link_title: "Web design and development"
 
   form:
     name: "Name and Lastname"
@@ -30,4 +39,4 @@ en:
     apartment: "Apartment"
     message: "Message"
     send: "Send"
-    policy: "Accept the Privacy Policy"
+    policy: "Accept the"

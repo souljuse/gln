@@ -1,9 +1,11 @@
 it:
   iubenda_id: 8015885
+  default_image_alt: "Florence Luxury Villas"
   nav:
     about: Chi siamo
     contact: Contatti
-    switch_language: En
+    switch_language: English
+
   cta:
     button-label: Contattaci
 
@@ -12,15 +14,24 @@ it:
   sections:
     subheading: "Il complesso"
     characteristics: "Caratteristiche"
-    ready_to_use: "Pronto all'uso"
+    facilities: "Pronto all'uso"
     services: "Servizi"
-    apartments_section: " è composta da tre appartamenti"
+    apartments_section: "è composta da %{count} appartamenti"
     apartment_services: "Servizi dell'appartamento "
     apartment: "appartamento"
     available: "- Attualmente disponibile -"
     unavailable: "- Attualmente non disponibile -"
-  about: 
+
+  building:
+    distance: "%{count} km dal centro della città."
+
+  about:
     subheading: "Chi siamo"
+
+  footer:
+    credits_name: "Cantiere Creativo"
+    credits_url: "https://www.cantierecreativo.net/"
+    credits_link_title: "Realizzazione siti web Firenze"
 
   form:
     name: "Nome e Cognome"
@@ -29,4 +40,4 @@ it:
     apartment: "Appartamento"
     message: "Messaggio"
     send: "Invia"
-    policy: "Accetta la Privacy Policy"
+    policy: "Accetta la"
