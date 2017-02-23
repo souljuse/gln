@@ -5,24 +5,26 @@
   .hero__body
     .hero__body__inner
       .wrap
-        .hero__image
-          .space--top-2= image_tag "logo-gold.svg", alt:"Florence Luxury Villas", title: "logo Florence Luxury Villas"
-        .hero__heading
-          .space--top-1
-            h1 Our Villas have been built in 1800
-
+        .hero__image: .space--top-2= image_tag "logo-gold.svg", alt: t('default_image_alt'), title: t('default_image_alt')
+        .hero__heading: .space--top-1: h1= dato.homepage.title
         .space--top-3: .align--center
           i.icon--arrow-down.with-gradient
 
-= partial "partials/card-horizontal"
+.wrap: .space--both-4: section.card--horizontal
+  .card__item--image style="background-image: url('/images/villa.jpg')"
+  .card__item--text
+    .card__content
+      .card__content__title= dato.about.title
+      .card__content__subtitle: h2.with-gradient= "Florence Luxury Villas"
+      .card__content__text= dato.about.abstract
+      .align--center= link_to t('read_more'), "#", class:"button card__content__button"
 
 = partial "partials/quote"
 
 .wrap: .space--both-4
   .grid--center
     - dato.buildings.each_with_index do |building, i|
-      - 2.times do
-        .grid__item.lap-6-12
-          = partial "partials/card-vertical", locals: {building: building, index: i}
+      .grid__item.lap-6-12
+        = partial "partials/building-card", locals: {building: building, index: i}
 
-= partial "partials/get-in-touch"
+= partial "partials/cta", locals: {text: dato.homepage.cta_text}

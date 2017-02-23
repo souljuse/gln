@@ -23,6 +23,7 @@ it:
     unavailable: "- Attualmente non disponibile -"
 
   building:
+    label: "Location"
     distance: "%{count} km dal centro della città."
 
   about:
