@@ -5,24 +5,15 @@
   .hero__body
     .hero__body__inner
       .wrap
-        .space--top-4.hero__logo
-          = image_tag 'logo-baige.svg'
+        .space--top-4.hero__logo= image_tag 'logo-baige.svg'
         .hero__subheading = apartment.building.name
-        .hero__heading
-          .space--top-1
-            h1 = apartment.name
-        .hero__text
-          = apartment.description
-
+        .hero__heading: .space--top-1: h1 = apartment.name
+        .hero__text= apartment.abstract
         .space--top-3: .align--center
           i.icon--arrow-down.with-gradient
 
-.wrap--on-desk
-  .space--both-3
-    ul.bxslider
-      - apartment.images_gallery.each do |image|
-        li
-          = image_tag image.url(w: 1400)
+- if apartment.images_gallery.any?
+  = partial "partials/gallery", locals: {images: apartment.images_gallery}
 
 .space--both-3.wrap
   section.section: .section__inner
@@ -34,34 +25,23 @@
 
 .space--both-3: .wrap--on-lap
   section.section--specs
-    .section--specs-bg
-      = image_tag 'logo-baige.svg'
+    .section--specs-bg= image_tag 'logo-baige.svg'
     .section__inner
       .wrap
         .section--specs__title.with-gradient = I18n.t("sections.characteristics")
-        .section__specs
-          .space--bottom-2
-            .formatted-content= apartment.specifications_text
-        .section__specs
-          .formatted-content= apartment.specifications_spec
+        .section__specs: .formatted-content= apartment.description
+        .section__specs: .formatted-content= apartment.summary
 
 .space--both-3: .wrap--on-lap
   section.section--specs
-    .section--specs-bg
-      = image_tag 'logo-baige.svg'
+    .section--specs-bg= image_tag 'logo-baige.svg'
     .section__inner: .wrap
       .section__specs
-        .section--specs__title.with-gradient = I18n.t("sections.ready_to_use")
-        .formatted-content= apartment.ready_to_use
+        .section--specs__title.with-gradient = I18n.t("sections.facilities")
+        .formatted-content= dato.global_facilities_text.content
       .section__specs
         .section--specs__title.with-gradient = I18n.t("sections.services")
-        .formatted-content= apartment.services
+        .formatted-content= dato.global_services_text.content
 
-.wrap: .space--both-4: section.card--horizontal--map
-  .card__item--map#map data-lat="#{apartment.location.latitude}" data-lon="#{apartment.location.longitude}"
-  .card__item--label
-    .card__item--label__content
-      .card__item--label__content__title
-        h2.with-gradient = apartment.name
-      .space--top-2.card__item--label__content__text
-        .formatted-content= apartment.contact
+= partial "partials/location-card", locals: {building: apartment.building}
+= partial "partials/cta", locals: {text: dato.homepage.cta_text}

@@ -1,96 +1,47 @@
 - content_for(:head)
   == dato_meta_tags(building)
 
+- building_apartments = dato.apartments.select {|apartment| apartment.building == building}
+
 .hero.hero--villa style="background-image: url('#{building.cover.url}')"
   .hero__body
     .hero__body__inner
       .wrap
-        .hero__subheading = I18n.t("sections.subheading")
-        .hero__heading
-          .space--top-2
-            h1 = building.name
-        .hero__text
-          = building.description
+        .hero__subheading= I18n.t("sections.subheading")
+        .hero__heading: .space--top-2: h1= building.name
+        .hero__text= building.description
+        .space--top-3: .align--center: i.icon--arrow-down.with-gradient
 
-        .space--top-3: .align--center
-          i.icon--arrow-down.with-gradient
+- if building.images_gallery.any?
+  = partial "partials/gallery", locals: {images: building.images_gallery}
 
-.wrap--on-desk
-  .space--both-3
-    ul.bxslider
-      - building.images_gallery.each do |image|
-        li
-          = image_tag image.url(w: 1400)
-
-
-.wrap
-  section.section: .section__inner
-    .section__title
-      - if I18n.locale == :it
-        = "#{I18n.t("sections.apartments_section")}#{building.name}"
-      - else
-        = "#{building.name}#{I18n.t("sections.apartments_section")}"
-
-- apartments = dato.apartments.select {|apartment| apartment.building == building}
-- if apartments.any?
-- apartments.each_with_index do |apartment, i|
-  - if i.even?
-    .wrap: .space--both-4: section.card--horizontal
+- if building_apartments.any?
+  .wrap: section.section: .section__inner: .section__title= "#{building.name} #{I18n.t("sections.apartments_section", count: building_apartments.count)}"
+  - building_apartments.each_with_index do |apartment, i|
+    - if i.even?
+      - html_class = 'card--horizontal'
+    - else
+      - html_class = 'card--horizontal--right'
+      
+    .wrap: .space--both-4: section class=html_class
       .card__item--image style="background-image: url('#{apartment.featured_image.url}')"
       .card__item--text
-        .card__item--text__bg--up
-          = image_tag 'logo-right.svg'
-        .card__item--text__bg--down
-          = image_tag 'logo-left.svg'
+        .card__item--text__bg--up= image_tag 'logo-right.svg'
+        .card__item--text__bg--down= image_tag 'logo-left.svg'
         .card__content
           .card__content__title
             - index = i+1
             - index_romanized = romanize(index);
             = "#{I18n.t("sections.apartment")} #{index_romanized}"
           
-          .card__content__subtitle
-            h2.with-gradient = apartment.name
-          
-          .card__content__text
-            = apartment.abstract
-          .align--center
-            = link_to I18n.t("read_more"), "/#{I18n.locale}/#{apartment.slug}/index.html", class:"button card__content__button"
+          .card__content__subtitle: h2.with-gradient = apartment.name
+          .card__content__text= apartment.abstract
+          .align--center= link_to I18n.t("read_more"), "/#{I18n.locale}/#{apartment.building.slug}/#{apartment.slug}/index.html", class:"button card__content__button"
           .space--top-2: .align--center
             - if apartment.available == true
               .available= I18n.t("sections.available")
             - else
               .unavailable= I18n.t("sections.unavailable")
 
-  - else
-    .wrap: .space--both-4: section.card--horizontal--right
-      .card__item--image style="background-image: url('#{apartment.featured_image.url}')"
-      .card__item--text
-        .card__content
-          .card__content__title
-            - index = i+1
-            - index_romanized = romanize(index);
-            = "#{I18n.t("sections.apartment")} #{index_romanized}"
-          
-          .card__content__subtitle
-            h2.with-gradient = apartment.name
-          
-          .card__content__text
-            = apartment.abstract
-          .align--center
-            = link_to I18n.t("read_more"), "/#{I18n.locale}/#{apartment.slug}/index.html", class:"button card__content__button"
-          .space--top-2: .align--center
-            - if apartment.available == true
-              .available= I18n.t("sections.available")
-            - else
-              .unavailable= I18n.t("sections.unavailable")
-
-  .wrap: .space--both-4: section.card--horizontal--map
-    .card__item--map#map data-lat="#{building.location.latitude}" data-lon="#{building.location.longitude}"
-    .card__item--label
-      .card__item--label__content
-        .card__item--label__content__title
-          h2.with-gradient = building.name
-        .space--top-2.card__item--label__content__text
-          .formatted-content= building.contact
-
-
+= partial "partials/location-card", locals: {building: building}
+= partial "partials/cta", locals: {text: dato.homepage.cta_text}

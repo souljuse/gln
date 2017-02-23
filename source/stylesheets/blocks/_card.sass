@@ -22,6 +22,7 @@
     height: 200px
     +at-breakpoint(lap)
       height: 100%
+
 .card__item--text__bg--down
   +position(absolute, auto 0 0 null)
   img
@@ -40,8 +41,8 @@
 .card__content
   +center-vertically
   +horizontal-padding(2)
-
-.card__content
+  width: 100%
+  box-sizing: border-box
 
 .card__content__title, .card__content__subtitle
   text-align: center
@@ -74,11 +75,6 @@
       vertical-align: top
       min-height: 500px
 
-  .card__content
-    +at-breakpoint(lap)
-      +center
-      width: 50%
-
 .card--vertical
   +margin-bottom(2)
 
@@ -87,7 +83,7 @@
     display: block
     margin: 0 auto
     +at-breakpoint(desk)
-      width: 80%
+      width: 90%
 
   .card__item--image
     +at-breakpoint(lap)
@@ -102,7 +98,6 @@
     +center
     +horizontal-padding(2)
     min-width: 80%
-
 
 .card--horizontal--right
   @extend .card--horizontal

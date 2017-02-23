@@ -1,0 +1,10 @@
+- html_class ||= nil
+
+- if images.count > 1
+  - html_class = 'bxslider'
+
+.wrap--on-desk
+  .space--both-3
+    ul class=html_class
+      - images.each do |image|
+        li= image_tag image.url(w: 1400)
