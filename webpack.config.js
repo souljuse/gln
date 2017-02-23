@@ -10,6 +10,9 @@ module.exports = {
   },
   resolve: {
     root: __dirname + '/source/javascripts',
+    alias: {
+      'bxslider': 'bxslider/dist/jquery.bxslider'
+    }
   },
   output: {
     path: __dirname + '/.tmp/dist',
@@ -27,4 +30,3 @@ module.exports = {
     extractSass
   ]
 };
-
