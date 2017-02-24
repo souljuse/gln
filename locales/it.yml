@@ -35,6 +35,7 @@ it:
     credits_link_title: "Realizzazione siti web Firenze"
 
   form:
+    title: "Richiesta informazioni"
     name: "Nome e Cognome"
     email: "Email"
     phone: "Telefono"

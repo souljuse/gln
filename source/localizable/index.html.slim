@@ -11,13 +11,14 @@
           i.icon--arrow-down.with-gradient
 
 .wrap: .space--both-4: section.card--horizontal
-  .card__item--image style="background-image: url('/images/villa.jpg')"
+  - about_image_url = dato.about.featured_image.url(w: 800)
+  .card__item--image style="background-image: url('#{about_image_url}')"
   .card__item--text
     .card__content
       .card__content__title= dato.about.title
-      .card__content__subtitle: h2.with-gradient= "Florence Luxury Villas"
+      .card__content__subtitle: h2.with-gradient= dato.site.name
       .card__content__text= dato.about.abstract
-      .align--center= link_to t('read_more'), "#", class:"button card__content__button"
+      .align--center= link_to t('read_more'), "/#{I18n.locale}/about/index.html", class: "button card__content__button"
 
 = partial "partials/quote"
 
