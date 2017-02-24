@@ -25,27 +25,23 @@ $(document).ready(function(){
   $('.main-nav__first-level__item--stick-left').css('top', top);
   $('.main-nav__first-level__item--stick-right').css('top', top);
 
+  //form submission with FormSpree
+    $("#contacts-form").submit(function(e) {
 
+        var url = "https://formspree.io/info@florenceluxuryvillas.com";
 
-//form submission with FormSpree
-  $("#contacts-form").submit(function(e) {
+        $.ajax({
+               type: "POST",
+               url: url,
+               data: $("#contacts-form").serialize(),
+               success: function(data)
+               {
+                   alert("Request sent.")
+               }
+             });
 
-      var url = "https://formspree.io/t.valentini@cantierecreativo.net";
-
-      $.ajax({
-             type: "POST",
-             url: url,
-             data: $("#contacts-form").serialize(),
-             success: function(data)
-             {
-                 alert("Request successfully sent!");
-             }
-           });
-
-      e.preventDefault();
-  });
-
-
+        e.preventDefault();
+    });
 });
 
 $('#main-nav-toggler').on('click', function(e) {

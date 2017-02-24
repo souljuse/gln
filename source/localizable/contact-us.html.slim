@@ -1,5 +1,5 @@
 - content_for(:head)
-  == dato_meta_tags(dato.contact)
+  == dato_meta_tags(dato.contacts_page)
 
 .hero.hero--contacts
   .hero__body
@@ -8,10 +8,17 @@
         .hero__logo
           .space--top-4
             = image_tag 'logo-baige.svg', alt: t('default_image_alt'), title: t('default_image_alt')
-            h1.hero__subheading = dato.contact.title
+            h1.hero__subheading = dato.contacts_page.title
 
         .space--top-4: .align--left
           form.form#contacts-form
+            fieldset: .align--center: .space--both-2: .formatted-content
+              h4.with-gradient= dato.site.name
+              = dato.contacts_page.phone_number
+              br
+              = link_to dato.contacts_page.email,"mailto:#{dato.contacts_page.email}", target: "_blank"
+              
+            hr
             fieldset
               .grid
                 .grid__item.desk-6-12
@@ -44,12 +51,3 @@
                     .grid__item.width-6-12
                       .align--right: .form__field
                         button.button type="submit" required="true" = I18n.t("form.send")
-            
-            hr
-            fieldset: .align--center: .space--both-2: .formatted-content
-              h4= dato.site.name
-              = dato.contacts_page.phone_number
-              br
-              = link_to dato.contacts_page.email,"mailto:#{dato.contacts_page.email}", target: "_blank"
-            
-                        
