@@ -19,8 +19,8 @@ it:
     apartments_section: "è composta da %{count} appartamenti"
     apartment_services: "Servizi dell'appartamento "
     apartment: "appartamento"
-    available: "- Attualmente disponibile -"
-    unavailable: "- Attualmente non disponibile -"
+    available: "Attualmente disponibile"
+    unavailable: "Attualmente non disponibile"
 
   building:
     label: "Location"

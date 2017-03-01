@@ -1,0 +1,12 @@
+.availability
+  &:after, &:before
+    content: " - "
+    display: inline
+
+.availability--available
+  @extend .availability
+  color: $light-blue-color
+
+.availability--unavailable
+  @extend .availability
+  color: $primary-color

@@ -30,7 +30,13 @@
       .wrap
         .section--specs__title.with-gradient = I18n.t("sections.characteristics")
         .section__specs: .formatted-content= apartment.description
-        .section__specs: .formatted-content= apartment.summary
+        .section__specs: .formatted-content
+          = apartment.summary
+          - if apartment.available == true
+            p= (apartment.availability_text.present? ? apartment.availability_text : I18n.t("sections.available"))
+          - else
+            p= (apartment.availability_text.present? ? apartment.availability_text : I18n.t("sections.unavailable"))
+
 
 .space--both-3: .wrap--on-lap
   section.section--specs

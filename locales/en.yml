@@ -18,8 +18,8 @@ en:
     apartments_section: "is composed by %{count} apartments"
     apartment_services: "'s apartment services"
     apartment: "apartment"
-    available: "- Currently Available -"
-    unavailable: "- Currently Unavailable -"
+    available: "Currently Available"
+    unavailable: "Currently Unavailable"
 
   building:
     label: "Location"
