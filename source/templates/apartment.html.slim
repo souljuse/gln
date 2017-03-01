@@ -38,10 +38,10 @@
     .section__inner: .wrap
       .section__specs
         .section--specs__title.with-gradient = I18n.t("sections.facilities")
-        .formatted-content= dato.global_facilities_text.content
+        .formatted-content= apartment.building.facilities
       .section__specs
         .section--specs__title.with-gradient = I18n.t("sections.services")
-        .formatted-content= dato.global_services_text.content
+        .formatted-content= apartment.building.services
 
 = partial "partials/location-card", locals: {building: apartment.building}
 = partial "partials/cta", locals: {text: dato.homepage.cta_text}

@@ -39,9 +39,10 @@
           .align--center= link_to I18n.t("read_more"), "/#{I18n.locale}/#{apartment.building.slug}/#{apartment.slug}/index.html", class:"button card__content__button"
           .space--top-2: .align--center
             - if apartment.available == true
-              .available= I18n.t("sections.available")
+              .available= (apartment.availability_text.present? ? apartment.availability_text : I18n.t("sections.available"))
             - else
-              .unavailable= I18n.t("sections.unavailable")
+              .unavailable= (apartment.availability_text.present? ? apartment.availability_text : I18n.t("sections.unavailable"))
 
+                
 = partial "partials/location-card", locals: {building: building}
 = partial "partials/cta", locals: {text: dato.homepage.cta_text}

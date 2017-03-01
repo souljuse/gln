@@ -1,6 +1,5 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 var extractSass = new ExtractTextPlugin('stylesheets/[name].css');
 
 module.exports = {
