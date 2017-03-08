@@ -11,7 +11,7 @@
           i.icon--arrow-down.with-gradient
 
 .wrap: .space--both-4: section.card--horizontal
-  - about_image_url = dato.about.featured_image.url(w: 800)
+  - about_image_url = dato.about.featured_image.url(w: 680, h: 500, fit: 'crop')
   .card__item--image style="background-image: url('#{about_image_url}')"
   .card__item--text
     .card__content
