@@ -7,6 +7,9 @@
       .wrap
         .hero__subheading = I18n.t("about.subheading")
         .hero__heading: .space--top-1: h1= dato.about.title
-        .hero__text= dato.about.description
+        .hero__text: .formatted-content= dato.about.description
+        .space--top-2: .align--center
+          - dato.builings.each do |building|
+            = link_to building.name, "/#{I18n.locale}/#{building.slug}/index.html", class: "button"
     
 = partial "partials/cta", locals: {text: dato.homepage.cta_text}

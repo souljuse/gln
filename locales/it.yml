@@ -3,6 +3,7 @@ it:
   default_image_alt: "Florence Luxury Villas"
   nav:
     about: Chi siamo
+    services: Servizi
     contact: Contatti
     switch_language: English
 

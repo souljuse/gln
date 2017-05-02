@@ -16,7 +16,10 @@
   = partial "partials/gallery", locals: {images: building.images_gallery}
 
 - if building_apartments.any?
-  .wrap: section.section: .section__inner: .section__title= "#{building.name} #{I18n.t("sections.apartments_section", count: building_apartments.count)}"
+  .wrap: section.section: .section__inner: .section__title
+    = building.apartments_title
+    /= "#{building.name} #{I18n.t("sections.apartments_section", count: building_apartments.count)}"
+  
   - building_apartments.each_with_index do |apartment, i|
     - if i.even?
       - html_class = 'card--horizontal'

@@ -36,9 +36,9 @@
   max-width: 740px
   color: $red-brown-color
   +at-breakpoint(medium)
-    font-size: 60px
-
-
+    font-size: 40px
+    max-width: 550px
+    
 .hero__text
   font-family: 'Sofia Light'
   +font-size(delta)
@@ -50,6 +50,7 @@
   +horizontal-padding(1)
   +at-breakpoint(medium)
     +font-size(gamma)
+
 .hero__actions
   +margin-top(2)
 
@@ -64,8 +65,10 @@
 .hero__image
   img
     +at-breakpoint(medium)
-      width: 900px
+      width: 550px
 
+    +at-breakpoint(wall)
+      width: 900px
 
 .hero--villa
   @extend .hero
