@@ -11,7 +11,7 @@
         .space--top-4
           - dato.faqs.each do |faq|
             .space--both-2
-              .space--bottom-1: .delta= faq.question
+              .space--bottom-1: h4.delta.with-gradient= faq.question
               .formatted-content= faq.answer
     
 = partial "partials/cta", locals: {text: dato.homepage.cta_text}
