@@ -1,5 +1,8 @@
 
 = javascript_include_tag  "application"
+= yield_content :page_javascript
+= javascript_include_tag "//www.googleadservices.com/pagead/conversion_async.js"
+
 javascript:
   function initMap() {
     var container = document.getElementById('map');
