@@ -35,6 +35,7 @@ $(document).ready(function(){
              success: function(data)
              {
                 alert("Request sent.");
+                ga('send', 'event', '[richiesta informazioni]', '[invio messaggio]');
              }
            });
 
