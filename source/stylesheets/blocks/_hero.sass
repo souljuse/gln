@@ -34,13 +34,13 @@
   margin-left: auto
   margin-right: auto
   max-width: 740px
-  color: $red-brown-color
+  color: $primary-color
   +at-breakpoint(medium)
     font-size: 40px
     max-width: 550px
-    
+
 .hero__text
-  font-family: 'Sofia Light'
+  font-family: $body-font-family
   +font-size(delta)
   +margin-top(2)
   max-width: 750px
@@ -56,11 +56,11 @@
 
 .hero--primary
   @extend .hero
-  background-color: $primary-color
-  color: white
+  background-color: $dark-bg-color
+  color: $light-bg-color
 
   .hero__text a
-    color: white
+    color: $light-bg-color
 
 .hero__image
   img
@@ -86,7 +86,7 @@
 
   .hero__subheading
     text-transform: uppercase
-    font-family: 'Sofia SemiBold'
+    font-family: $body-font-family
     font-size: $base-font-size
     +at-breakpoint(medium)
       +font-size(30px)
@@ -96,20 +96,20 @@
 
 .hero--apartment
   @extend .hero--villa
-  background-color: $light-brown-color
+  // background-color: $light-brown-color
 
 .hero--contacts
   @extend .hero--villa
   background-image: image-url('contacts_bw.jpg')
 
   .hero__body
-    background-color: rgba(131,66,56,0.91)
+    background-color: $light-brown-color
 
 .hero--about
   @extend .hero--villa
   background-image: image-url('pattern-white.jpg')
   .hero__subheading, .hero__heading, .hero__text
-    color: $red-brown-color
+    color: $primary-color
 
   .hero__heading
     +font-size(beta)

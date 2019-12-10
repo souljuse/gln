@@ -9,8 +9,8 @@ activate :asset_hash
 activate :directory_indexes
 activate :pagination
 activate :dato,
-  token: 'f62bead0c8e59d044b31',
-  base_url: 'https://www.florenceluxuryvillas.com'
+  token: '30aafaf3e8ddcc84466c4026f2b907',
+  base_url: 'https://www.gruppolucenera.it'
 
 activate :external_pipeline,
   name: :webpack,
@@ -20,7 +20,7 @@ activate :external_pipeline,
   source: ".tmp/dist",
   latency: 1
 
-set :url_root, 'https://www.florenceluxuryvillas.com'
+set :url_root, 'https://www.gruppolucenera.com'
 
 configure :build do
   activate :minify_html do |html|
