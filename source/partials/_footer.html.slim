@@ -6,13 +6,13 @@ footer.footer: .footer__inner: .wrap
         .footer__logo__text
           = dato.site.name
           br
-          = "All Right Are Reserved ® 2016-#{Time.now.year}" 
+          = "All Right Are Reserved ® 2019-#{Time.now.year}"
           br
           = link_to dato.contacts_page.email,"mailto:#{dato.contacts_page.email}", target: "_blank"
           br
           => link_to "Privacy Policy", "//www.iubenda.com/privacy-policy/#{t('iubenda_id')}", class: "iubenda-nostyle no-brand iubenda-embed"
-          = link_to "Cookie Policy", "//www.iubenda.com/privacy-policy/#{t('iubenda_id')}/cookie-policy", class: "iubenda-nostyle no-brand iubenda-embed" 
-    
+          = link_to "Cookie Policy", "//www.iubenda.com/privacy-policy/#{t('iubenda_id')}/cookie-policy", class: "iubenda-nostyle no-brand iubenda-embed"
+
     - dato.buildings.each_with_index do |building, i|
       - if i.even?
         - html_class = "desk-pull-4-12"
@@ -20,9 +20,7 @@ footer.footer: .footer__inner: .wrap
         .space--bottom-2: .location: .location__inner
           .location__title.with-gradient= building.name
           .location__address= building.address
-            
+
   .footer-copyright
-    => "Design & Development by"
-    => link_to t('footer.credits_name'), t('footer.credits_url'), title: t('footer.credits_link_title'), target: "_blank"
     => "- Built with Middleman and"
     = link_to "DatoCMS", "https://datocms.com", alt:"DatoCMS", title:"DatoCMS"
