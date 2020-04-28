@@ -2,7 +2,7 @@ footer.footer: .footer__inner: .wrap
   .grid--center.grid--middle
     .grid__item.desk-4-12.desk-push-4-12
       .space--bottom-2
-        .footer__logo= image_tag "logo-brown.svg", alt: t('default_image_alt'), title: t('default_image_alt')
+        .footer__logo= image_tag "logo-brown.svg"
         .footer__logo__text
           = dato.site.name
           br
@@ -10,16 +10,16 @@ footer.footer: .footer__inner: .wrap
           br
           = link_to dato.contacts_page.email,"mailto:#{dato.contacts_page.email}", target: "_blank"
           br
-          => link_to "Privacy Policy", "//www.iubenda.com/privacy-policy/#{t('iubenda_id')}", class: "iubenda-nostyle no-brand iubenda-embed"
-          = link_to "Cookie Policy", "//www.iubenda.com/privacy-policy/#{t('iubenda_id')}/cookie-policy", class: "iubenda-nostyle no-brand iubenda-embed"
+          = link_to "Privacy Policy", "/www.iubenda.com/privacy-policy/xxx", class: "iubenda-nostyle no-brand iubenda-embed"
+          = link_to "Cookie Policy", "/www.iubenda.com/privacy-policy/xxx/cookie-policy", class: "iubenda-nostyle no-brand iubenda-embed"
 
-    - dato.buildings.each_with_index do |building, i|
+    - dato.events.each_with_index do |event, i|
       - if i.even?
         - html_class = "desk-pull-4-12"
       .grid__item.desk-4-12 class=html_class
         .space--bottom-2: .location: .location__inner
-          .location__title.with-gradient= building.name
-          .location__address= building.address
+          .location__title.with-gradient= event.name
+          .location__address= event.address
 
   .footer-copyright
     => "- Built with Middleman and"

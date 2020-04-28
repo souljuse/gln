@@ -1,0 +1,43 @@
+- content_for(:head)
+  == dato_meta_tags(photo_gallery)
+
+.hero.hero--apartment
+  .hero__body
+    .hero__body__inner
+      .wrap
+        .space--top-4.hero__logo= image_tag 'logo-baige.svg'
+        .hero__subheading ciao
+        .hero__heading: .space--top-1: h1 = photo_gallery.name
+        .hero__text= photo_gallery.description
+        .space--top-3: .align--center
+          i.icon--arrow-down.with-gradient
+
+- if photo_gallery.images.any?
+  = partial "partials/gallery", locals: {images: photo_gallery.images}
+
+.space--both-3.wrap
+  section.section: .section__inner
+    .section__title ciao
+.space--both-3: .wrap--on-lap
+  section.section--specs
+    .section--specs-bg= image_tag 'logo-baige.svg'
+    .section__inner
+      .wrap
+        .section--specs__title.with-gradient sections.characteristics
+        .section__specs: .formatted-content= photo_gallery.description
+
+.space--both-3: .wrap--on-lap
+  section.section--specs
+    .section--specs-bg= image_tag 'logo-baige.svg'
+    .section__inner: .wrap
+      .section__specs
+        .section--specs__title.with-gradient sections.facilities
+        .formatted-content= photo_gallery.event.name
+      .section__specs
+        .section--specs__title.with-gradient sections.services
+        .formatted-content= photo_gallery.building.services
+
+- if photo_gallery.event
+  = partial "partials/location-card", locals: {event: photo_gallery.event}
+
+= partial "partials/cta", locals: {text: dato.homepage.cta_text}

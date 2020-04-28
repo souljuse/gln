@@ -1,13 +1,11 @@
 .wrap: .space--both-4: section.card--horizontal--map
-  .card__item--map#map data-lat="#{building.location.latitude}" data-lon="#{building.location.longitude}"
+  .card__item--map#map data-lat="#{event.location.latitude}" data-lon="#{event.location.longitude}"
   .card__item--label
     .card__item--label__content
       .card__item--label__content__title
-        h2.with-gradient = building.name
+        h2.with-gradient = event.name
       .space--top-2.card__item--label__content__text
         .formatted-content
-          p= t('building.distance', count: building.city_center_distance)
-          p= building.address
+          p= event.address
           p= dato.contacts_page.phone_number
           p= link_to dato.contacts_page.email,"mailto:#{dato.contacts_page.email}", target: "_blank"
-          

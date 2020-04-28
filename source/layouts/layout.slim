@@ -1,8 +1,7 @@
 doctype 5
-html lang=I18n.locale
+html
   head = partial "partials/head"
   body
-    noscript: iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPPZQQS" height="0" width="0" style="display:none;visibility:hidden"
     = partial "partials/site-header"
     .main-frame
       = yield

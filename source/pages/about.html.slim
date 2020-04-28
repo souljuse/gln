@@ -10,6 +10,6 @@
         .hero__text: .formatted-content= dato.about.description
         .space--top-2: .align--center
           - dato.buildings.each do |building|
-            = link_to building.name, "/#{I18n.locale}/#{building.slug}/index.html", class: "button"
-    
+            = link_to building.name, "/#{building.slug}/index.html", class: "button"
+
 = partial "partials/cta", locals: {text: dato.homepage.cta_text}

@@ -1,25 +1,20 @@
-- url_prefix = I18n.locale == :it ?  "/it" : "/en"
-- switch_locale_url = I18n.locale == :it ?  "/en" : "/it"
-
 .site-header: .wrap--on-desk
   .main-nav
     = link_to "MENU", "#", class: "main-nav__link hidden--on-desk", id: "main-nav-toggler"
+
     .main-nav__first-level
       .main-nav__first-level__item--stick-left
-        = link_to "Home", "#{url_prefix}/", class: "main-nav__link"
-        
-      .main-nav__first-level__item
-        = link_to t('nav.about'), "#{url_prefix}/about/index.html", class: "main-nav__link"
-      
-      .main-nav__first-level__item
-        = link_to t('nav.services'), "#{url_prefix}/services/index.html", class: "main-nav__link"
-        
-      - dato.buildings.each do |building|
-        .main-nav__first-level__item
-          = link_to building.name, "#{url_prefix}/#{building.slug}", class: "main-nav__link"
+        = link_to "Home", "/", class: "main-nav__link"
 
       .main-nav__first-level__item
-        = link_to t('nav.contact'), "#{url_prefix}/contact-us/index.html", class: "main-nav__link"
-      
-      .main-nav__first-level__item--stick-right
-        = link_to t('nav.switch_language'), switch_locale_url, class: "main-nav__link"
+        = link_to 'regolamento', "/about/index.html", class: "main-nav__link"
+
+      .main-nav__first-level__item
+        = link_to 'services', "/services/index.html", class: "main-nav__link"
+
+      - dato.events.each do |event|
+        .main-nav__first-level__item
+          = link_to event.name, "/#{event.slug}", class: "main-nav__link"
+
+      .main-nav__first-level__item
+        = link_to 'contact', "/contact-us/index.html", class: "main-nav__link"

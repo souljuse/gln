@@ -1,7 +1,6 @@
 .card
 
 .card__item
-
 .card__item--image
   @extend .card__item
   min-height: 300px
@@ -14,7 +13,7 @@
 .card__item--text
   @extend .card__item
   position: relative
-  background-color: $white-color
+  background-color: $light-bg-color
 
 .card__item--text__bg--up
   +position(absolute, 0 null null 0)
@@ -62,10 +61,12 @@
 .card__content__text
   text-align: justify
   text-align-last: center
+  background-color: $light-bg-color
   +vertical-margin(2)
 
 .card--horizontal
   max-width: 500px
+  border: 1px white solid
   margin: 0 auto
   +at-breakpoint(desk)
     max-width: none
@@ -131,7 +132,6 @@
   .card__item--label
     direction: ltr
     text-align: left
-    background-color: $white-color
     position: relative
 
   .card__item--label__content

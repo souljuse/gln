@@ -1,15 +1,31 @@
-javascript:
-  var language = window.navigator.userLanguage || window.navigator.language;
-  switch (language.substring(0,2)){
-   case "it":
-    l = "it"
-    break;
-   default:
-    l = "en"
-    break;
-  }
-  window.location.href = "/" + l + "/"
+- content_for(:head)
+  == dato_meta_tags(dato.homepage)
+
+.hero
+  .hero__body
+    .hero__body__inner
+      .wrap
+        .hero__image: .space--top-2= image_tag "logo-gold.svg"
+        .hero__heading: .space--top-1: h1= dato.homepage.title
+        .space--top-3: .align--center
+          i.icon--arrow-down.with-gradient
+
+.wrap: .space--both-4: section.card--horizontal
+  - about_image_url = dato.about.featured_image.url(w: 680, h: 500, fit: 'crop')
+  .card__item--image style="background-image: url('#{about_image_url}')"
+  .card__item--text
+    .card__content
+      .card__content__title= dato.about.title
+      .card__content__subtitle: h2.with-gradient= dato.site.name
+      .card__content__text= dato.about.abstract
+      .align--center= link_to "Chi siamo", "/about/index.html", class: "button card__content__button"
 
 
-= link_to "Italian version", "/it"
-= link_to "English version", "/en"
+.wrap: .space--both-4
+  .grid--center
+    - dato.events.each_with_index do |event, i|
+      - if i < 3
+        .grid__item.lap-6-12
+          = partial "partials/event-card", locals: {event: event, index: i}
+
+= partial "partials/cta", locals: {text: dato.homepage.cta_text}

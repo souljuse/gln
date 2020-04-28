@@ -4,7 +4,6 @@ page '/*.txt', layout: false
 
 ignore '/templates/*'
 
-activate :i18n, :langs => [:it, :en], :mount_at_root => false
 activate :asset_hash
 activate :directory_indexes
 activate :pagination
@@ -37,39 +36,28 @@ end
 
 helpers do
   # Returns a hash of localized paths for a given page
-  def localized_paths_for(page)
-    return {} if page.path == "index.html"
-    localized_paths = {}
-    (langs).each do |locale|
-      # Loop over all pages to find the ones using the same templates (proxied_to) for each language
-      sitemap.resources.each do |resource|
-        next if !resource.is_a?(Middleman::Sitemap::ProxyResource)
-        if resource.target_resource == page.target_resource
-          if resource.metadata[:options][:locale] == locale
-            localized_paths[locale] = resource.url
-            break
-          end
-        end
-      end
-    end
-
-    localized_paths
-  end
+  # def localized_paths_for(page)
+  #   return {} if page.path == "index.html"
+  #   localized_paths = {}
+  #   # Loop over all pages to find the ones using the same templates (proxied_to) for each language
+  #   sitemap.resources.each do |resource|
+  #     next if !resource.is_a?(Middleman::Sitemap::ProxyResource)
+  #     if resource.target_resource == page.target_resource
+  #       if resource.metadata[:options][:locale] == locale
+  #         localized_paths[locale] = resource.url
+  #         break
+  #       end
+  #     end
+  #   end
+  #
+  #   localized_paths
+  # end
 end
 
+dato.events.each do |event|
+  proxy "/#{event.slug}/index.html", "/templates/event.html", locals: { event: event }, ignore: true
+end
 
-[:en, :it].each do |locale|
-  I18n.with_locale(locale) do
-    dato.buildings.each do |building|
-      I18n.locale = locale
-      proxy "/#{locale}/#{building.slug}/index.html", "/templates/building.html", locals: { building: building }, ignore: true, locale: locale
-    end
-  end
-
-  I18n.with_locale(locale) do
-    dato.apartments.each do |apartment|
-      I18n.locale = locale
-      proxy "/#{locale}/#{apartment.building.slug}/#{apartment.slug}/index.html", "/templates/apartment.html", locals: { apartment: apartment }, ignore: true, locale: locale
-    end
-  end
+dato.photo_galleries.each do |photo_gallery|
+  proxy "/#{photo_gallery.slug}/index.html", "/templates/photo_gallery.html", locals: { photo_gallery: photo_gallery }, ignore: true
 end
