@@ -37,13 +37,13 @@ dato.tap do |dato|
   # paginate dato.events.sort_by(&:name), "/events", "/templates/event.html", per_page: 20
 
   dato.events.each do |event|
-    proxy "/events/#{event.slug}", "/templates/event.html", locals: { event: event }, :layout => "layout"
+    proxy "/events/#{event.slug}.html", "/templates/event.html", locals: { event: event }, :layout => "layout"
   end
 
   # paginate dato.rule_chapters.sort_by(&:title), "/rules", "/templates/chapter.html", per_page: 20
 
   dato.rule_chapters.each do |chapter|
-    proxy "/rules/#{chapter.slug}", "/templates/chapter.html", locals: { chapter: chapter }, :layout => "layout"
+    proxy "/rules/#{chapter.slug}.html", "/templates/chapter.html", locals: { chapter: chapter }, :layout => "layout"
   end
 end
 
