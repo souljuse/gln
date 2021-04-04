@@ -19,45 +19,52 @@ activate :external_pipeline,
   source: ".tmp/dist",
   latency: 1
 
-set :url_root, 'https://www.gruppolucenera.com'
+set :url_root, 'https://www.gruppolucenera.it'
 
 configure :build do
+  activate :minify_css
+  activate :minify_javascript
   activate :minify_html do |html|
     html.remove_input_attributes = false
   end
+
   activate :search_engine_sitemap,
     default_priority: 0.5,
     default_change_frequency: 'weekly'
 end
 
+page '/*.xml', layout: false
+page '/*.json', layout: false
+page '/*.txt', layout: false
+
 configure :development do
   activate :livereload
 end
-
-helpers do
-  # Returns a hash of localized paths for a given page
-  # def localized_paths_for(page)
-  #   return {} if page.path == "index.html"
-  #   localized_paths = {}
-  #   # Loop over all pages to find the ones using the same templates (proxied_to) for each language
-  #   sitemap.resources.each do |resource|
-  #     next if !resource.is_a?(Middleman::Sitemap::ProxyResource)
-  #     if resource.target_resource == page.target_resource
-  #       if resource.metadata[:options][:locale] == locale
-  #         localized_paths[locale] = resource.url
-  #         break
-  #       end
-  #     end
-  #   end
-  #
-  #   localized_paths
-  # end
-end
+#
+# dato.seasons.each do |season|
+#   proxy "/seasons/#{season.slug}.html", "/templates/season.html",
+#     locals: { season: season }
+# end
 
 dato.events.each do |event|
-  proxy "/#{event.slug}/index.html", "/templates/event.html", locals: { event: event }, ignore: true
+  proxy "/events/#{event.slug}", "/templates/event.html", locals: { event: event }
 end
+# 
+# dato.tap do |dato|
+#   paginate dato.events.sort_by(&:name), "/events", "/templates/event.html", per_page: 20
+# end
 
-dato.photo_galleries.each do |photo_gallery|
-  proxy "/#{photo_gallery.slug}/index.html", "/templates/photo_gallery.html", locals: { photo_gallery: photo_gallery }, ignore: true
+helpers do
+  def markdown(text)
+    renderer = Redcarpet::Render::HTML.new
+    Redcarpet::Markdown.new(renderer).render(text)
+  end
+
+  def image_or_missing(image)
+    if image
+      yield image
+    else
+      image_tag "/images/missing-image.png"
+    end
+  end
 end

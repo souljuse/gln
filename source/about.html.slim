@@ -5,11 +5,12 @@
   .hero__body
     .hero__body__inner
       .wrap
-        .hero__subheading = I18n.t("about.subheading")
+        .hero__subheading Gruppo Luce Nera
         .hero__heading: .space--top-1: h1= dato.about.title
         .hero__text: .formatted-content= dato.about.description
         .space--top-2: .align--center
-          - dato.buildings.each do |building|
-            = link_to building.name, "/#{building.slug}/index.html", class: "button"
+          - dato.events.each do |event|
+            = link_to event.name, "/events/#{event.slug}", class: "button"
 
+= partial "partials/cta", locals: {text: dato.homepage.cta_text}
 = partial "partials/cta", locals: {text: dato.homepage.cta_text}

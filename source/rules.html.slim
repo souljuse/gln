@@ -1,0 +1,17 @@
+- content_for(:head)
+  == dato_meta_tags(dato.rules_page)
+
+.hero.hero--about
+  .hero__body
+    .hero__body__inner
+      .wrap
+        .hero__subheading Gruppo luce nera
+        .hero__heading: .space--top-1: h1= dato.rules_page.title
+        .hero__text: .formatted-content= dato.rules_page.text
+        .space--top-4
+          - dato.rule_chapters.each do |chapter|
+            .space--both-2
+              .space--bottom-1: h4.delta.with-gradient= chapter.title
+              .formatted-content= chapter.excerpt
+
+= partial "partials/cta", locals: {text: dato.homepage.cta_text}
