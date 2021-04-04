@@ -2,7 +2,7 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-# ignore '/templates/*'
+ignore '/templates/*'
 
 activate :asset_hash
 activate :directory_indexes
@@ -44,16 +44,16 @@ end
 
 
 dato.tap do |dato|
-  paginate dato.events.sort_by(&:name), "/events", "/templates/event.html", per_page: 20
+  # paginate dato.events.sort_by(&:name), "/events", "/templates/event.html", per_page: 20
 
   dato.events.each do |event|
     proxy "/events/#{event.slug}", "/templates/event.html", locals: { event: event }, :layout => "layout"
   end
 
-  paginate dato.rule_chapters.sort_by(&:title), "/rule_chapters", "/templates/event.html", per_page: 20
+  # paginate dato.rule_chapters.sort_by(&:title), "/rules", "/templates/chapter.html", per_page: 20
 
   dato.rule_chapters.each do |chapter|
-    proxy "/capitoli/#{chapter.slug}", "/templates/chapter.html", locals: { chapter: chapter }, :layout => "layout"
+    proxy "/rules/#{chapter.slug}", "/templates/chapter.html", locals: { chapter: chapter }, :layout => "layout"
   end
 end
 

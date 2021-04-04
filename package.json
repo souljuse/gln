@@ -14,7 +14,7 @@
     "bemo-webfonts": "1.0.1",
     "css-loader": "0.25.0",
     "extract-text-webpack-plugin": "1.0.1",
-    "import-glob-loader": "1.1.0",
+    "import-glob-loader": "^1.1.0",
     "node-sass": "^4.13.1",
     "sass-loader": "4.0.2",
     "webpack": "1.13.2"

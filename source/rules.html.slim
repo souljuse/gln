@@ -7,7 +7,7 @@
   .space--top-4
     - dato.rule_chapters.each do |chapter|
       .space--both-2
-        = link_to "/capitoli/#{chapter.slug}", class: "button"
+        = link_to "/rules/#{chapter.slug}", class: "button"
           .space--bottom-1: h4.delta.with-gradient= chapter.title
           .formatted-content= chapter.excerpt
 
