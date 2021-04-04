@@ -5,15 +5,14 @@
   &:hover
     opacity: .9
 
-.card__item
-.card__item--image
+.card__item, .card__item--image
   @extend .card__item
-  min-height: 200px
+  min-height: 150px
   background-size: cover
   background-position: center
   background-repeat: no-repeat
   +at-breakpoint(lap)
-    min-height: 300px
+    min-height: 200px
 
 .card__item--text
   @extend .card__item
@@ -76,8 +75,9 @@
 
 .card--horizontal
   max-width: 500px
-  border: 1px white solid
   margin: 0 auto
+  background-color: #121212
+  border-radius: 3px
   +at-breakpoint(desk)
     max-width: none
 
@@ -102,8 +102,7 @@
       width: 90%
 
   .card__item--image
-    +at-breakpoint(lap)
-      min-height: 150px
+    min-height: 150px
     +at-breakpoint(desk)
       min-height: 200px
 

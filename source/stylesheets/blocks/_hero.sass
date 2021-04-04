@@ -19,7 +19,7 @@
 
 .hero__heading
   +heading-font-family
-  +font-size(alpha)
+  +font-size(beta)
   margin-left: auto
   margin-right: auto
   max-width: 740px
@@ -27,10 +27,9 @@
   text-transform: uppercase
   letter-spacing: 4px
   +at-breakpoint(medium)
+    +font-size(alpha)
     letter-spacing: 8px
     max-width: 850px
-  +at-breakpoint(wall)
-    font-size: 100px
 
 .hero__subheading
   text-transform: uppercase
