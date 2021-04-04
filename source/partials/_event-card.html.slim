@@ -9,7 +9,6 @@ section.card--vertical
       .card__item--text__bg--left
 
     .card__spacer
-      .card__content__title = event.name
       .card__content__subtitle: h2.with-gradient = event.name
       .card__content__text= event.abstract
-      .align--center= link_to "Vai all'evento", "/#{event.slug}/index.html", class: "button card__content__button"
+      .align--center= link_to "Vai all'evento", "/eventi/#{event.slug}.html", class: "button card__content__button"

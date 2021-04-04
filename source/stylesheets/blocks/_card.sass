@@ -1,14 +1,19 @@
 .card
 
+.card__content__button
+  background-color: $light-body-bg-color
+  &:hover
+    opacity: .9
+
 .card__item
 .card__item--image
   @extend .card__item
-  min-height: 300px
+  min-height: 200px
   background-size: cover
   background-position: center
   background-repeat: no-repeat
   +at-breakpoint(lap)
-    min-height: 500px
+    min-height: 300px
 
 .card__item--text
   @extend .card__item
@@ -17,7 +22,7 @@
 .card__item--text__bg--up
   +position(absolute, 0 null null 0)
   img
-    height: 200px
+    height: 100px
     +at-breakpoint(lap)
       height: 100%
 
@@ -30,18 +35,16 @@
 
 .card__item--text__bg--right
   +position(absolute, 0 0 0 0)
-  background-image: image-url('logo-white.svg')
+  background-image: image-url('logo-light.svg')
   background-repeat: no-repeat
   background-position: -100% center
-  background-color: $light-bg-color
   background-size: 400px
 
 .card__item--text__bg--left
   +position(absolute, 0 0 0 0)
-  background-image: image-url('logo-white.svg')
+  background-image: image-url('logo-light.svg')
   background-repeat: no-repeat
   background-position: 200% center
-  background-color: $light-bg-color
   background-size: 400px
 
 .card__content
@@ -64,6 +67,7 @@
 .card__content__subtitle
   text-transform: uppercase
   +margin-top(2)
+  +font-size(gamma)
 
 .card__content__text
   text-align: justify
@@ -87,6 +91,8 @@
 
 .card--vertical
   +margin-bottom(2)
+  background-color: #121212
+  border-radius: 3px
 
   .card__item
     min-height: 400px
@@ -97,9 +103,9 @@
 
   .card__item--image
     +at-breakpoint(lap)
-      min-height: 220px
+      min-height: 150px
     +at-breakpoint(desk)
-      min-height: 400px
+      min-height: 200px
 
   .card__item--text
     min-height: 350px

@@ -7,17 +7,17 @@
         = link_to "Home", "/", class: "main-nav__link"
 
       .main-nav__first__item
-        = link_to 'chi siamo', "/about", class: "main-nav__link"
+        = link_to 'chi siamo', "/chi-siamo", class: "main-nav__link"
 
       .main-nav__first__item
-        = link_to 'regolamento', "/rules", class: "main-nav__link"
+        = link_to 'regolamento', "/regolamento", class: "main-nav__link"
 
       .main-nav__first--nested
-        = link_to 'eventi', "/events", class: "main-nav__link"
+        = link_to 'eventi', "/eventi", class: "main-nav__link"
         .main-nav__nested
           - dato.events.each do |event|
             .main-nav__nested__item
-              = link_to event.name, "/events/#{event.slug}", class: "main-nav__link"
+              = link_to event.name, "/eventi/#{event.slug}.html", class: "main-nav__link"
 
       .main-nav__first__item
-        = link_to 'contact', "/contact-us", class: "main-nav__link"
+        = link_to 'contatti', "/contatti", class: "main-nav__link"

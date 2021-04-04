@@ -23,6 +23,10 @@ activate :external_pipeline,
   source: ".tmp/dist",
   latency: 1
 
+configure :development do
+  activate :livereload
+end
+
 configure :build do
   activate :minify_html do |html|
     html.remove_input_attributes = false
@@ -37,10 +41,10 @@ dato.tap do |dato|
   # paginate dato.events.sort_by(&:name), "/events", "/templates/event.html", per_page: 20
 
   dato.events.each do |event|
-    proxy "/events/#{event.slug}.html", "/templates/event.html", locals: { event: event }, :layout => "layout"
+    proxy "/eventi/#{event.slug}.html", "/templates/event.html", locals: { event: event }, :layout => "layout"
   end
 
-  # paginate dato.rule_chapters.sort_by(&:title), "/rules", "/templates/chapter.html", per_page: 20
+  # paginate dato.rule_chapters.sort_by(&:title), "/regolamento", "/templates/chapter.html", per_page: 20
 
   dato.rule_chapters.each do |chapter|
     proxy "/regolamento/#{chapter.slug}.html", "/templates/chapter.html", locals: { chapter: chapter }, :layout => "layout"

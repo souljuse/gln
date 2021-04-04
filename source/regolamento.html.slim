@@ -5,10 +5,9 @@
 
 .wrap
   .space--top-4
-    - dato.rule_chapters.each do |chapter|
-      .space--both-2
-        = link_to "/regolamento/#{chapter.slug}", class: "button"
-          .space--bottom-1: h4.delta.with-gradient= chapter.title
-          .formatted-content= chapter.excerpt
+  .grid--center
+    - dato.rule_chapters.each_with_index do |chapter, i|
+      .grid__item.lap-3-12
+        = partial "partials/chapter-card", locals: {chapter: chapter, index: i}
 
 = partial "partials/cta", locals: {text: dato.homepage.cta_text}
