@@ -12,7 +12,6 @@
 //   $('.main-frame').css('min-height', frameHeight);
 //
 //   var windowHeight = $(window).height();
-//
 //   if ($(window).width() >= 1024) {
 //     var windowHeight = $(window).height();
 //     var headerHeight = $('.header').height();
@@ -47,6 +46,7 @@
 //   e.preventDefault();
 //   $(this).parent().toggleClass('is-active');
 // });
+//
 //
 // $('.js-cta').on('click', function(e) {
 //   goog_snippet_vars = function() {

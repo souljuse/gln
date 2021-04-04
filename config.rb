@@ -3,6 +3,7 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 ignore '/templates/*'
+ignore '/stylesheets/*'
 
 activate :asset_hash
 activate :directory_indexes
@@ -11,19 +12,18 @@ activate :dato,
   token: '30aafaf3e8ddcc84466c4026f2b907',
   base_url: 'https://www.gruppolucenera.it'
 
-activate :external_pipeline,
-  name: :webpack,
-  command: build? ?
-    "./node_modules/webpack/bin/webpack.js --bail -p" :
-    "./node_modules/webpack/bin/webpack.js --watch -d --progress --color",
-  source: ".tmp/dist",
-  latency: 1
 
 set :url_root, 'https://www.gruppolucenera.it'
 
+activate :external_pipeline,
+  name: :webpack,
+  command: build? ?
+    "./node_modules/webpack/bin/webpack.js --bail --progress" :
+    "./node_modules/webpack/bin/webpack.js --watch --progress --color",
+  source: ".tmp/dist",
+  latency: 1
+
 configure :build do
-  activate :minify_css
-  activate :minify_javascript
   activate :minify_html do |html|
     html.remove_input_attributes = false
   end
@@ -32,16 +32,6 @@ configure :build do
     default_priority: 0.5,
     default_change_frequency: 'weekly'
 end
-
-configure :development do
-  activate :livereload
-end
-#
-# dato.seasons.each do |season|
-#   proxy "/seasons/#{season.slug}.html", "/templates/season.html",
-#     locals: { season: season }
-# end
-
 
 dato.tap do |dato|
   # paginate dato.events.sort_by(&:name), "/events", "/templates/event.html", per_page: 20

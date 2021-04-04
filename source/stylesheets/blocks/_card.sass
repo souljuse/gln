@@ -13,7 +13,6 @@
 .card__item--text
   @extend .card__item
   position: relative
-  background-color: $light-bg-color
 
 .card__item--text__bg--up
   +position(absolute, 0 null null 0)
@@ -30,12 +29,20 @@
       height: 100%
 
 .card__item--text__bg--right
-  +position(absolute, 50% 0 null null)
-  transform: translateY(-50%)
+  +position(absolute, 0 0 0 0)
+  background-image: image-url('logo-white.svg')
+  background-repeat: no-repeat
+  background-position: -100% center
+  background-color: $light-bg-color
+  background-size: 400px
 
 .card__item--text__bg--left
-  +position(absolute, 50% null null 0)
-  transform: translateY(-50%)
+  +position(absolute, 0 0 0 0)
+  background-image: image-url('logo-white.svg')
+  background-repeat: no-repeat
+  background-position: 200% center
+  background-color: $light-bg-color
+  background-size: 400px
 
 .card__content
   position: relative
@@ -61,7 +68,6 @@
 .card__content__text
   text-align: justify
   text-align-last: center
-  background-color: $light-bg-color
   +vertical-margin(2)
 
 .card--horizontal

@@ -1,28 +1,73 @@
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var extractSass = new ExtractTextPlugin('stylesheets/[name].css');
+const webpack = require("webpack");
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
+  devtool: "source-map",
+  mode: "development",
   entry: {
-    application: __dirname + '/source/javascripts/index.js',
-    styles: __dirname + '/source/stylesheets/application.sass'
-  },
-  resolve: {
-    root: __dirname + '/source/javascripts',
+    application: ["./source/javascripts/index.js"],
+    style: ["./source/stylesheets/application.sass"]
   },
   output: {
-    path: __dirname + '/.tmp/dist',
-    filename: 'javascripts/[name].js',
+    path: path.resolve(__dirname, ".tmp/dist"),
+    filename: "javascripts/[name].js"
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /.*\.sass$/,
-        loader: extractSass.extract(['css', 'sass', 'import-glob-loader'])
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        }
+      },
+      {
+        test: /\.(ttf|eot|svg|png|jpg|gif|ico|woff)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "file-loader"
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+          "import-glob-loader"
+        ]
       }
     ]
   },
-  plugins: [
-    extractSass
-  ]
+  plugins: [new MiniCssExtractPlugin()]
 };
+//
+// module.exports = {
+//   entry: {
+//     application: __dirname + "/source/javascripts/index.js",
+//     styles: __dirname + "/source/stylesheets/application.sass"
+//   },
+//   resolve: {
+//     root: __dirname + "/source/javascripts"
+//   },
+//   output: {
+//     path: __dirname + "/.tmp/dist",
+//     filename: "javascripts/[name].js"
+//   },
+//   module: {
+//     rules: [
+//       {
+//         test: /\.(sa|sc|c)ss$/,
+//         loader: [
+//           "style-loader",
+//           "css-loader",
+//           "sass-loader",
+//           "import-glob-loader"
+//         ],
+//         exclude: /node_modules/
+//       }
+//     ]
+//   },
+//   plugins: [extractSass]
+// };

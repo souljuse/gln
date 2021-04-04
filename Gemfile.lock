@@ -186,8 +186,8 @@ DEPENDENCIES
   pry
   redcarpet
   romanize (~> 0.0.0)
+  sass
   sass-globbing
-  sassc
   slim
 
 BUNDLED WITH

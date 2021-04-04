@@ -4,9 +4,9 @@ section.card--vertical
   .card__item--image style="background-image: url('#{image_url}')"
   .card__item--text
     - if index.even?
-      .card__item--text__bg--right = image_tag 'logo-r-left.svg'
+      .card__item--text__bg--right
     - else
-      .card__item--text__bg--left = image_tag 'logo-r-right.svg'
+      .card__item--text__bg--left
 
     .card__spacer
       .card__content__title = event.name

@@ -2,12 +2,11 @@
 // to these functions!
 
 @function image-url($path)
-  @return url('/images/#{$path}')
+  @return url('/source/images/#{$path}')
 
 @function font-url($path)
-  @return url('/fonts/#{$path}')
+  @return url('/source/fonts/#{$path}')
 
 @each $function-name in image-url font-url
   @if not function-exists($function-name)
     @warn "Function #{$function-name}() missing, please see functions/_urls.sass for details!"
-
