@@ -1,14 +1,19 @@
 - content_for(:head)
   == dato_meta_tags(event)
 
-.hero.hero--villa style="background-image: url('#{event.cover.url}')"
-  .hero__body
-    .hero__body__inner
-      .wrap
-        .hero__subheading Eventi GLN
-        .hero__heading: .space--top-2: h1= event.name
-        .hero__text= event.description
-        .space--top-3: .align--center: i.icon--arrow-down.with-gradient
+= partial "partials/hero", locals: { title: event.name, subheading: "Eventi", subtitle: '' }
 
-= partial "partials/location-card", locals: {event: event}
+
+.wrap
+  .hero style="background-image: url('#{event.cover.url}')"
+  .space--bottom-5
+  .space--bottom-5: .align--center: i.icon--arrow-down.with-gradient
+  .section__text.formatted-content= markdown(event.description)
+  .space--bottom-5
+
+  .section__title Dove si svolge l'evento?
+  .space--bottom-5
+  = partial "partials/location-card", locals: {event: event}
+  .space--bottom-5
+
 = partial "partials/cta", locals: {text: dato.homepage.cta_text}

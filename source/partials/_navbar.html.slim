@@ -17,7 +17,7 @@
         .main-nav__nested
           - dato.events.each do |event|
             .main-nav__nested__item
-              = link_to event.name, "/#{event.slug}", class: "main-nav__link"
+              = link_to event.name, "/events/#{event.slug}", class: "main-nav__link"
 
       .main-nav__first__item
         = link_to 'contact', "/contact-us", class: "main-nav__link"

@@ -1,0 +1,17 @@
+- content_for(:head)
+  == dato_meta_tags(chapter)
+
+= partial "partials/hero", locals: { title: chapter.title, subheading: "Regolamento", subtitle: '' }
+
+.wrap
+  .space--bottom-5
+  .space--bottom-5: .align--center: i.icon--arrow-down.with-gradient
+  .space--bottom-5
+  - chapter.content.each do |record|
+    - if record.item_type.api_key == "text"
+      h1.section__title= record.title
+      .space--bottom-7
+      .section__text.formatted-content= markdown(record.text)
+      .space--bottom-7
+
+= partial "partials/cta", locals: {text: dato.homepage.cta_text}
