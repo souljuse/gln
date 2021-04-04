@@ -1,19 +1,12 @@
 - content_for(:head)
   == dato_meta_tags(dato.events_page)
 
-.hero.hero--about
-  .hero__body
-    .hero__body__inner
-      .wrap
-        .hero__subheading Eventi Gruppo Luce Nera
-        .space--top-4
-        .hero__heading: .space--top-1: h1= dato.events_page.title
-        .space--top-4
-        .hero__text: .formatted-content= dato.events_page.description
-        .space--top-4
-        - dato.events.each do |event|
-          .space--both-2
-            .space--bottom-1: h4.delta.with-gradient= event.name
-            .formatted-content= event.abstract
+.wrap
+  = partial "partials/hero", locals: { title: dato.events_page.title, subheading: "Eventi Gruppo Luce Nera", subtitle: dato.events_page.description }
+  .space--top-4
+  - dato.events.each do |event|
+    .space--both-2
+      .space--bottom-1: h4.delta.with-gradient= event.name
+      .formatted-content= event.abstract
 
 = partial "partials/cta", locals: {text: dato.homepage.cta_text}

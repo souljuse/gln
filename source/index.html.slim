@@ -1,14 +1,8 @@
 - content_for(:head)
   == dato_meta_tags(dato.homepage)
 
-.hero
+.hero.hero--home
   .hero__body
-    .hero__body__inner
-      .wrap
-        .hero__image: .space--top-2= image_tag "logo-gold.svg"
-        .hero__heading: .space--top-1: h1= dato.homepage.title
-        .space--top-3: .align--center
-          i.icon--arrow-down.with-gradient
 
 .wrap: .space--both-4: section.card--horizontal
   - about_image_url = dato.about.featured_image.url(w: 680, h: 500, fit: 'crop')

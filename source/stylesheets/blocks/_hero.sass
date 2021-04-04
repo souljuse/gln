@@ -13,19 +13,29 @@
     +at-breakpoint(tab)
       +font-size(alpha)
 
+.hero--home
+  height: 80vh
+  .hero__body
+    background-image: image-url('logo-white.svg')
+    width: 75%
+    margin: 0 auto
+
+
 .hero__body
-  display: table
   width: 100%
   text-align: center
   min-height: 460px
+  position: relative
+  background-image: image-url('logo-light.svg')
+  background-blend-mode: color-burn
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center
+  height: 100%
   +at-breakpoint(medium)
     min-height: 600px
 
-.hero__body__inner
-  display: table-cell
-  vertical-align: middle
-  +vertical-padding(4)
-  position: relative
+
 
 .hero__heading
   +heading-font-family
