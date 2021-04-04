@@ -43,7 +43,7 @@ dato.tap do |dato|
   # paginate dato.rule_chapters.sort_by(&:title), "/rules", "/templates/chapter.html", per_page: 20
 
   dato.rule_chapters.each do |chapter|
-    proxy "/rules/#{chapter.slug}.html", "/templates/chapter.html", locals: { chapter: chapter }, :layout => "layout"
+    proxy "/regolamento/#{chapter.slug}.html", "/templates/chapter.html", locals: { chapter: chapter }, :layout => "layout"
   end
 end
 

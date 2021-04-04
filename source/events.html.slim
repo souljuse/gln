@@ -5,9 +5,10 @@
 
 .wrap
   .space--top-4
-  - dato.events.each do |event|
-    .space--both-2
-      .space--bottom-1: h4.delta.with-gradient= event.name
-      .formatted-content= event.abstract
+  .grid--center
+    - dato.events.each_with_index do |event, i|
+      - if i < 3
+        .grid__item.lap-6-12
+          = partial "partials/event-card", locals: {event: event, index: i}
 
 = partial "partials/cta", locals: {text: dato.homepage.cta_text}
