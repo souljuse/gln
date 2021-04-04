@@ -1,16 +1,11 @@
 - content_for(:head)
   == dato_meta_tags(dato.about)
 
-.hero.hero--about
-  .hero__body
-    .hero__body__inner
-      .wrap
-        .hero__subheading Gruppo Luce Nera
-        .hero__heading: .space--top-1: h1= dato.about.title
-        .hero__text: .formatted-content= dato.about.description
-        .space--top-2: .align--center
-          - dato.events.each do |event|
-            = link_to event.name, "/events/#{event.slug}", class: "button"
+= partial "partials/hero", locals: { title: dato.about.title, subheading: "Gruppo Luce Nera", subtitle: dato.about.description }
 
-= partial "partials/cta", locals: {text: dato.homepage.cta_text}
+.wrap
+  .space--top-2: .align--center
+    - dato.events.each do |event|
+      = link_to event.name, "/events/#{event.slug}", class: "button"
+
 = partial "partials/cta", locals: {text: dato.homepage.cta_text}

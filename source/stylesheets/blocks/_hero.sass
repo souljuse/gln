@@ -4,6 +4,7 @@
   background-color: $light-grey-color
   background-size: cover
   position: relative
+  height: 60vh
   i.icon--arrow-down
     +font-size(beta)
     position: absolute
@@ -13,13 +14,36 @@
     +at-breakpoint(tab)
       +font-size(alpha)
 
+.hero__subheading, .hero__heading, .hero__text
+  color: $primary-color
+
+.hero__heading
+  +heading-font-family
+  +font-size(alpha)
+  margin-left: auto
+  margin-right: auto
+  max-width: 740px
+  line-height: 1.2
+  text-transform: uppercase
+  letter-spacing: 4px
+  +at-breakpoint(medium)
+    letter-spacing: 8px
+    max-width: 850px
+  +at-breakpoint(wall)
+    font-size: 100px
+
+.hero__subheading
+  text-transform: uppercase
+  font-family: $body-font-family
+  font-size: $base-font-size
+  color: #969696
+
 .hero--home
   height: 80vh
   .hero__body
     background-image: image-url('logo-white.svg')
     width: 75%
     margin: 0 auto
-
 
 .hero__body
   width: 100%
@@ -35,19 +59,8 @@
   +at-breakpoint(medium)
     min-height: 600px
 
-
-
-.hero__heading
-  +heading-font-family
-  +font-size(alpha)
-  line-height: 1.2
-  margin-left: auto
-  margin-right: auto
-  max-width: 740px
-  color: $primary-color
-  +at-breakpoint(medium)
-    font-size: 40px
-    max-width: 550px
+.hero__inner
+  +center
 
 .hero__text
   font-family: $body-font-family
@@ -79,51 +92,3 @@
 
     +at-breakpoint(wall)
       width: 900px
-
-.hero--villa
-  @extend .hero
-  .hero__subheading, .hero__heading, .hero__text
-    color: $white-color
-
-  .hero__heading
-    letter-spacing: 4px
-    +at-breakpoint(medium)
-      font-size: 80px
-      letter-spacing: 8px
-      max-width: 850px
-    +at-breakpoint(wall)
-      font-size: 100px
-
-  .hero__subheading
-    text-transform: uppercase
-    font-family: $body-font-family
-    font-size: $base-font-size
-    +at-breakpoint(medium)
-      +font-size(30px)
-
-  .hero__heading
-    text-transform: uppercase
-
-.hero--apartment
-  @extend .hero--villa
-  // background-color: $light-brown-color
-
-.hero--contacts
-  @extend .hero--villa
-  background-image: image-url('contacts_bw.jpg')
-
-  .hero__body
-    background-color: $light-brown-color
-
-.hero--about
-  @extend .hero--villa
-  // background-image: image-url('pattern-white.jpg')
-  .hero__subheading, .hero__heading, .hero__text
-    color: $primary-color
-
-  .hero__heading
-    +font-size(alpha)
-    +at-breakpoint(medium)
-      +font-size(alpha)
-    +at-breakpoint(wall)
-      font-size: 50px

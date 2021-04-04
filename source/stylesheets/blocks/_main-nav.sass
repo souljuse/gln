@@ -1,15 +1,20 @@
 .main-nav
   text-align: center
-
   &.is-active
-    .main-nav__first-level
+    .main-nav__first
       display: block
 
-.main-nav__first-level
+.main-nav__first
   display: none
   background: $light-bg-color
 
-.main-nav__first-level__item
+.main-nav__first--nested
+  @extend .main-nav__first
+  &:hover
+    .main-nav__nested
+      display: block
+
+.main-nav__first__item
 
 .main-nav__link
   +heading-font-family
@@ -17,33 +22,39 @@
   display: block
   +vertical-padding(1)
   text-transform: uppercase
+  &:hover
+    color: #969696
 
-.main-nav__first-level__item--stick-left
-  @extend .main-nav__first-level__item
+.main-nav__first__item--stick-left
+  @extend .main-nav__first__item
 
-.main-nav__first-level__item--stick-right
-  @extend .main-nav__first-level__item
+.main-nav__first__item--stick-right
+  @extend .main-nav__first__item
   color: $extra-light-grey
 
-+at-breakpoint(desk)
+.main-nav__nested
+  display: none
+  position: absolute
+  +padding(2)
+  background: $light-bg-color
 
-  .main-nav__first-level, .main-nav__first-level__item
+.main-nav__nested__item
+
+
++at-breakpoint(desk)
+  .main-nav__first, .main-nav__first__item
     +inline-block
 
   .main-nav__link
     color: $extra-light-grey
     +horizontal-padding(2)
     +horizontal-margin(1)
-    &:hover
-      color: $primary-color
 
-  .main-nav__first-level__item--stick-left
+  .main-nav__first__item--stick-left
     +position(fixed, 30% null null -38px)
-    // top: 50%
     transform: rotate(-90deg)
 
-  .main-nav__first-level__item--stick-right
+  .main-nav__first__item--stick-right
     width: 145px
     +position(fixed, 30% -50px null null)
-    // top: 50%
     transform: rotate(-90deg)

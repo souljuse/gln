@@ -1,26 +1,17 @@
 footer.footer: .footer__inner: .wrap
   .grid--center.grid--middle
-    .grid__item.desk-4-12.desk-push-4-12
+    .grid__item.desk-4-12
       .space--bottom-2
-        .footer__logo= image_tag "logo-brown.svg"
+        .footer__logo= image_tag "logo-white.svg"
         .footer__logo__text
-          = dato.site.name
+          = "Associazione Gruppo Luce Nera"
           br
           = "All Right Are Reserved ® 2019-#{Time.now.year}"
           br
           = link_to dato.contacts_page.email,"mailto:#{dato.contacts_page.email}", target: "_blank"
           br
           = link_to "Privacy Policy", "/www.iubenda.com/privacy-policy/xxx", class: "iubenda-nostyle no-brand iubenda-embed"
-          = link_to "Cookie Policy", "/www.iubenda.com/privacy-policy/xxx/cookie-policy", class: "iubenda-nostyle no-brand iubenda-embed"
-
-    - dato.events.each_with_index do |event, i|
-      - if i.even?
-        - html_class = "desk-pull-4-12"
-      .grid__item.desk-4-12 class=html_class
-        .space--bottom-2: .location: .location__inner
-          .location__title.with-gradient= event.name
-          .location__address= event.address
 
   .footer-copyright
-    => "- Built with Middleman and"
+    => "Built with Middleman and"
     = link_to "DatoCMS", "https://datocms.com", alt:"DatoCMS", title:"DatoCMS"

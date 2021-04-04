@@ -1,8 +1,9 @@
 - content_for(:head)
   == dato_meta_tags(dato.events_page)
 
+= partial "partials/hero", locals: { title: dato.events_page.title, subheading: "Eventi Gruppo Luce Nera", subtitle: dato.events_page.description }
+
 .wrap
-  = partial "partials/hero", locals: { title: dato.events_page.title, subheading: "Eventi Gruppo Luce Nera", subtitle: dato.events_page.description }
   .space--top-4
   - dato.events.each do |event|
     .space--both-2
