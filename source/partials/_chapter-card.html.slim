@@ -1,11 +1,10 @@
 section.card--vertical
-  .card__item--text
-    - if index.even?
-      .card__item--text__bg--right
-    - else
-      .card__item--text__bg--left
+  - if index.even?
+    .card__item--text__bg--right
+  - else
+    .card__item--text__bg--left
 
-    .card__spacer
-      .card__content__subtitle: h6.with-gradient = chapter.title
-      .card__content__text= chapter.excerpt
-      .align--center= link_to "Vai al capitolo", "/regolamento/#{chapter.slug}.html", class: "button card__content__button"
+  .card__spacer
+    .card__content__subtitle: h6.with-gradient = chapter.title
+    .card__content__text= chapter.excerpt
+    .align--center= link_to "Vai al capitolo", "/regolamento/#{chapter.slug}.html", class: "button card__content__button"

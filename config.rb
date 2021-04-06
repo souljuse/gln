@@ -54,7 +54,8 @@ end
 helpers do
   def markdown(text)
     renderer = Redcarpet::Render::HTML.new
-    Redcarpet::Markdown.new(renderer).render(text)
+
+    Redcarpet::Markdown.new(renderer, :tables => true).render(text)
   end
 
   def image_or_missing(image)

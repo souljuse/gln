@@ -11,7 +11,13 @@
     - if record.item_type.api_key == "text"
       h1.section__title= record.title
       .space--bottom-7
-      .section__text.formatted-content= markdown(record.text)
+      section.section.formatted-content= markdown(record.text)
       .space--bottom-7
+    - if record.item_type.api_key == "header"
+      h4.section__title= record.title
+    - if record.item_type.api_key == "download"
+      section.section
+        a.button--rev [href="#{record.asset.url}" download]
+          = record.name
 
 = partial "partials/cta", locals: {text: dato.homepage.cta_text}

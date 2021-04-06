@@ -1,10 +1,10 @@
 .hero
   background-repeat: no-repeat
   background-position: center center
-  background-color: $light-bg-color
+  background-color: $bg-color
   background-size: cover
   position: relative
-  height: 70vh
+  min-height: 70vh
   i.icon--arrow-down
     +font-size(beta)
     position: absolute
@@ -37,32 +37,26 @@
   font-size: $base-font-size
   color: #969696
 
-.hero--home
-  height: 80vh
-  .hero__body
-    background-image: image-url('logo-white.svg')
-    background-size: 80%
-    background-repeat: no-repeat
-    background-position: center
-    width: 75%
-    margin: 0 auto
-
-.hero__body
-  width: 100%
-  text-align: center
-  min-height: 460px
-  position: relative
+.hero__background
+  width: 80%
+  height: 80%
+  +center
   background-image: image-url('logo-light.svg')
   background-blend-mode: color-burn
-  background-size: 80%
+  background-size: contain
   background-repeat: no-repeat
   background-position: center
-  height: 100%
-  +at-breakpoint(medium)
-    min-height: 600px
+
+.hero--home
+  @extend .hero
+  min-height: 80vh
+  .hero__background
+    background-image: image-url('logo-white.svg')
+
 
 .hero__inner
   +center
+  text-align: center
 
 .hero__text
   font-family: $body-font-family
@@ -82,10 +76,10 @@
 .hero--primary
   @extend .hero
   background-color: $dark-bg-color
-  color: $light-bg-color
+  color: $bg-color
 
   .hero__text a
-    color: $light-bg-color
+    color: $bg-color
 
 .hero__image
   img

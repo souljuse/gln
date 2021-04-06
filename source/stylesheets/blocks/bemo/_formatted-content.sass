@@ -7,6 +7,9 @@
     &:last-child
       margin-bottom: 0
 
+  h1, h2, h3, h4, h5
+    +heading-font-family
+
   ul, ol, blockquote
     padding-left: 30px
 
@@ -18,7 +21,6 @@
 
   h1, h2, h3, h4, h5, h6
     +heading-font-family
-    +margin-top(2)
     line-height: 1
 
     &:first-child
@@ -36,6 +38,7 @@
 
   table
     width: 100%
+    +margin-bottom(2)
     @extend .table
 
   blockquote
@@ -43,10 +46,107 @@
     font-family: $georgia
     position: relative
     color: $light-grey-color
+    +margin-bottom(2)
 
     &:before
       @extend .icon--quote:before
       +position(absolute, 0 null null 0)
 
-a
-  text-decoration: underline
+  h1
+    font-weight: bold
+    +font-size(alphaplus)
+    +margin-top(5)
+    +margin-bottom(4)
+
+  h3
+    +font-size(alphaplus)
+    font-weight: 700
+    +margin-top(5)
+    +margin-bottom(3)
+
+  h4
+    +font-size(alphaplus)
+    font-weight: 700
+    +margin-top(5)
+    +margin-bottom(3)
+
+  h5
+    +font-size(alpha)
+    font-weight: 700
+    +margin-top(4)
+    +margin-bottom(2)
+
+  h6
+    +font-size(gamma)
+    +margin-top(2)
+    +margin-bottom(2)
+    font-weight: 700
+
+  p
+    +margin-bottom(3)
+    line-height: 1.7
+
+  a
+    font-weight: 500
+    text-decoration: underline
+
+  pre
+    +margin-bottom(6)
+    +margin-top(2)
+    border-radius: 3px
+    background-color: #282936
+    +horizontal-padding(2)
+    +vertical-padding(4)
+
+  video
+    +margin-bottom(4)
+    width: 100%
+    box-shadow: 2px 14px 15px #ddd
+
+  strong
+    font-weight: 600
+
+  iframe
+    +vertical-margin(4)
+
+  .center
+    text-align: center
+    +margin-bottom(4)
+
+  .flex
+    display: flex
+    align-items: center
+    justify-content: center
+    +margin-bottom(4)
+    +margin-bottom(4)
+  .flex > *
+    margin: 0
+    +horizontal-margin(2)
+
+  .big
+    +font-size(big)
+
+  .huge
+    +font-size(huge)
+
+  .inline-buttons
+    +font-size(milli)
+
+.language-html
+  overflow: scroll
+
+@media only screen and (max-width: 1000px)
+  .markdown
+    .big
+      +font-size(alpha)
+
+    .huge
+      +font-size(big)
+
+@media only screen and (max-width: 500px)
+  .markdown
+    .big
+      +font-size(beta)
+
+    .huge
+      +font-size(big)

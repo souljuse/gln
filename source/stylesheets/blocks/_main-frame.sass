@@ -1,12 +1,12 @@
 .main-frame
   padding-top: $canvas-size
   +at-breakpoint(lap)
-    border-left: $canvas-size solid $light-bg-color
-    border-right: $canvas-size solid $light-bg-color
+    border-left: $canvas-size solid $bg-color
+    border-right: $canvas-size solid $bg-color
     padding: $canvas-size 0
     &:after
       content: " "
-      background: $light-bg-color
+      background: $bg-color
       +position(fixed, null null 0 null)
       width: 100%
       height: $canvas-size

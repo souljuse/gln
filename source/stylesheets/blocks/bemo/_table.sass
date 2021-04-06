@@ -1,7 +1,9 @@
 .table
   width: 100%
   table-layout: fixed
-  background-color: white
+  background-color: $light-bg-color
+  border-radius: 3px
+  +padding(2)
 
   td, th
     text-align: left
@@ -12,9 +14,6 @@
     font-variant: small-caps
     text-transform: uppercase
     border-bottom: 1px solid $border-color
-
-  tr:nth-child(2n)
-    background-color: $light-bg-color
 
 +at-breakpoint(lte-lap)
   .table
@@ -53,4 +52,3 @@
         font-variant: small-caps
         text-transform: uppercase
         display: block
-
