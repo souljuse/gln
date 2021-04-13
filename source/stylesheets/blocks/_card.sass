@@ -41,18 +41,24 @@
     +padding(4)
     +center-vertically
 
-.card__content__title, .card__content__subtitle
+.card__content__kicker
   text-align: center
   text-transform: uppercase
   +heading-font-family
   +margin-bottom(2)
+  color: $light-grey-color
+  font-size: 15px
+  font-weight: lighter
 
 .card__content__title
-  color: $extra-light-grey
-
-.card__content__subtitle
+  max-width: 80%
+  margin: 0 auto
+  +margin-bottom(3)
+  text-align: center
   text-transform: uppercase
   +font-size(gamma)
+  letter-spacing: 10px
+  font-weight: bold
 
 .card__content__text
   text-align: center
@@ -63,6 +69,9 @@
   margin: 0 auto
   background-color: #121212
   border-radius: 3px
+  position: relative
+  .card__content
+    +center
   +at-breakpoint(desk)
     max-width: none
 
@@ -82,7 +91,8 @@
   min-height: 400px
   .card__spacer
     +center
-
+  .card__item--text
+    +padding(4)
 
 .card__item--text__bg--right
   +position(absolute, 0 0 0 0)

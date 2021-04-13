@@ -1,16 +1,7 @@
 - content_for(:head)
   == dato_meta_tags(photo_gallery)
 
-.hero.hero--apartment
-  .hero__background
-    .hero__background__inner
-      .wrap
-        .space--top-4.hero__logo= image_tag 'logo-baige.svg'
-        .hero__subheading ciao
-        .hero__heading: .space--top-1: h1 = photo_gallery.name
-        .hero__text= photo_gallery.description
-        .space--top-3: .align--center
-          i.icon--arrow-down.with-gradient
+= partial "partials/hero", locals: { title: photo_gallery.name, subheading: "Galleria", subtitle: '' }
 
 - if photo_gallery.images.any?
   = partial "partials/gallery", locals: {images: photo_gallery.images}

@@ -4,7 +4,7 @@
   background-color: $bg-color
   background-size: cover
   position: relative
-  min-height: 70vh
+  min-height: 80vh
   i.icon--arrow-down
     +font-size(beta)
     position: absolute
@@ -34,8 +34,10 @@
 .hero__subheading
   text-transform: uppercase
   font-family: $body-font-family
-  font-size: $base-font-size
   color: #969696
+  +at-breakpoint(medium)
+    font-size: $base-font-size
+
 
 .hero__background
   width: 80%
@@ -49,7 +51,7 @@
 
 .hero--home
   @extend .hero
-  min-height: 80vh
+  min-height: 85vh
   .hero__background
     background-image: image-url('logo-white.svg')
 
@@ -61,7 +63,6 @@
 .hero__text
   font-family: $body-font-family
   +font-size(delta)
-  +margin-top(2)
   max-width: 750px
   margin-left: auto
   margin-right: auto

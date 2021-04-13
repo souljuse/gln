@@ -1,7 +1,7 @@
 - content_for(:head)
   == dato_meta_tags(dato.about)
 
-= partial "partials/hero", locals: { title: dato.about.title, subheading: "Gruppo Luce Nera", subtitle: dato.about.abstract }
+= partial "partials/hero", locals: { title: dato.about.title, subheading: dato.about.kicker, subtitle: dato.about.abstract }
 
 .wrap
   section.section.space--top-2
