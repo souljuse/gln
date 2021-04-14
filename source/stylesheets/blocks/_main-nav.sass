@@ -10,9 +10,10 @@
 
 .main-nav__first--nested
   @extend .main-nav__first
-  &:hover
-    .main-nav__nested
-      display: block
+  +at-breakpoint(desk)
+    &:hover
+      .main-nav__nested
+        display: block
 
 .main-nav__first__item
 
@@ -34,9 +35,11 @@
 
 .main-nav__nested
   display: none
-  position: absolute
-  +padding(2)
-  background: $bg-color
+  +at-breakpoint(desk)
+    position: absolute
+    +padding(2)
+    background: $bg-color
+    text-align: left
 
 .main-nav__nested__item
 

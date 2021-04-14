@@ -6,7 +6,7 @@
 .wrap
   .space--bottom-5
   - chapter.subchapters.each_with_index do |sub, i|
-    .grid__item.lap-6-12.desk-4-12.wall-3-12
+    .grid__item.lap-6-12.desk-4-12.medium-3-12
       = partial "partials/subchapter-card", locals: {chapter: chapter, sub: sub, index: i}
 
 = partial "partials/cta"
