@@ -44,6 +44,10 @@ dato.tap do |dato|
     proxy "/eventi/#{event.slug}.html", "/templates/event.html", locals: { event: event }, :layout => "layout"
   end
 
+  dato.photo_galleries.each do |gallery|
+    proxy "/foto/#{gallery.slug}.html", "/templates/gallery.html", locals: { gallery: gallery }, :layout => "layout"
+  end
+
   # paginate dato.rule_chapters.sort_by(&:title), "/regolamento", "/templates/chapter.html", per_page: 20
 
   dato.rule_chapters.each do |chapter|

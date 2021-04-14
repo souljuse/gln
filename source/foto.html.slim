@@ -1,0 +1,13 @@
+- content_for(:head)
+  == dato_meta_tags(dato.gallery_page)
+
+= partial "partials/hero", locals: { title: dato.gallery_page.title, subheading: "Gruppo Luce Nera", subtitle: dato.gallery_page.description }
+
+.wrap
+  .space--top-4
+  .grid--center
+    - dato.photo_galleries.each_with_index do |gallery, i|
+      .grid__item.lap-6-12.desk-4-12.medium-3-12
+        = partial "partials/gallery-card", locals: {gallery: gallery, index: i}
+
+= partial "partials/cta"

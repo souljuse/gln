@@ -1,0 +1,9 @@
+- image_url = gallery.cover.url(w: 660, h: 400, fit: 'crop')
+
+section.card--vertical
+  .card__item--image style="background-image: url('#{image_url}')"
+  .card__item--text
+    .card__spacer
+      .card__content__kicker= gallery.description
+      h6.card__content__title.with-gradient = gallery.title
+      .align--center= link_to "Vai all'album", "/foto/#{gallery.slug}.html", class: "button card__content__button"

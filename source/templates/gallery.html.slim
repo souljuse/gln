@@ -1,0 +1,13 @@
+- content_for(:head)
+  == dato_meta_tags(gallery)
+
+= partial "partials/hero", locals: { title: gallery.title, subheading: "Regolamento", subtitle: '' }
+
+.wrap
+  .space--bottom-5
+  - gallery.images.each_with_index do |image, i|
+    .grid__item.lap-6-12.desk-4-12.medium-3-12
+      section.card--vertical
+        img.card__image src="#{image.url}"
+
+= partial "partials/cta"
