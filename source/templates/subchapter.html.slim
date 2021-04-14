@@ -1,0 +1,21 @@
+- content_for(:head)
+  == dato_meta_tags(chapter)
+
+= partial "partials/hero", locals: { title: chapter.title, subheading: "Regolamento", subtitle: '' }
+
+.wrap
+  .space--bottom-5
+  - chapter.content.each do |record|
+    - if record.item_type.api_key == "text"
+      h1.section__title= record.title
+      .space--bottom-7
+      section.section.formatted-content= markdown(record.text)
+      .space--bottom-7
+    - if record.item_type.api_key == "header"
+      h4.section__title= record.title
+    - if record.item_type.api_key == "download"
+      section.section
+        a.button--rev [href="#{record.asset.url}" download]
+          = record.name
+
+= partial "partials/cta"

@@ -9,8 +9,12 @@
       .main-nav__first__item
         = link_to 'chi siamo', "/chi-siamo", class: "main-nav__link"
 
-      .main-nav__first__item
+      .main-nav__first--nested
         = link_to 'regolamento', "/regolamento", class: "main-nav__link"
+        .main-nav__nested
+          - dato.rule_chapters.each do |chapter|
+            .main-nav__nested__item
+              = link_to chapter.title, "/regolamento/#{chapter.slug}.html", class: "main-nav__link"
 
       .main-nav__first--nested
         = link_to 'eventi', "/eventi", class: "main-nav__link"

@@ -5,17 +5,8 @@
 
 .wrap
   .space--bottom-5
-  - chapter.content.each do |record|
-    - if record.item_type.api_key == "text"
-      h1.section__title= record.title
-      .space--bottom-7
-      section.section.formatted-content= markdown(record.text)
-      .space--bottom-7
-    - if record.item_type.api_key == "header"
-      h4.section__title= record.title
-    - if record.item_type.api_key == "download"
-      section.section
-        a.button--rev [href="#{record.asset.url}" download]
-          = record.name
+  - chapter.subchapters.each_with_index do |sub, i|
+    .grid__item.lap-6-12.desk-4-12.wall-3-12
+      = partial "partials/subchapter-card", locals: {chapter: chapter, sub: sub, index: i}
 
 = partial "partials/cta"

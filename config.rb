@@ -48,6 +48,10 @@ dato.tap do |dato|
 
   dato.rule_chapters.each do |chapter|
     proxy "/regolamento/#{chapter.slug}.html", "/templates/chapter.html", locals: { chapter: chapter }, :layout => "layout"
+
+    chapter.subchapters.each do |sub|
+      proxy "/regolamento/#{chapter.slug}/#{sub.slug}.html", "/templates/subchapter.html", locals: { chapter: sub }, :layout => "layout"
+    end
   end
 end
 
