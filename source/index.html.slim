@@ -4,21 +4,28 @@
 .hero--home
   .hero__background
 
-.wrap: .space--top-4: section.card--horizontal
-  - about_image_url = dato.about.featured_image.url(w: 680, h: 500, fit: 'crop')
-  .card__item--image style="background-image: url('#{about_image_url}')"
-  .card__item--text
-    .card__content
-      .card__content__kicker Scopri di più
-      .card__content__title: h2.with-gradient Associazione Gruppo Luce Nera
-      .align--center= link_to "Chi siamo", "/chi-siamo", class: "button card__content__button"
+.wrap
+  section
+    .card--horizontal
+      - about_image_url = dato.about.featured_image.url(w: 680, h: 500, fit: 'crop')
+      .card__item--image style="background-image: url('#{about_image_url}')"
+      .card__item--text
+        .card__content
+          .card__content__kicker Scopri di più
+          h6.card__content__title.with-gradient Associazione Gruppo Luce Nera
+          .align--center= link_to "Chi siamo", "/chi-siamo", class: "button card__content__button"
 
 
-.wrap: .space--top-4
-  .grid--center
-    - dato.events.each_with_index do |event, i|
-      - if i < 3
-        .grid__item.lap-6-12
-          = partial "partials/event-card", locals: {event: event, index: i}
+  .space--bottom-6
+
+  section
+    h5.section__title I prossimi eventi
+    .space--bottom-6
+
+    .grid--center
+      - dato.events.each_with_index do |event, i|
+        - if i < 3
+          .grid__item.lap-6-12
+            = partial "partials/event-card", locals: {event: event, index: i}
 
 = partial "partials/cta"

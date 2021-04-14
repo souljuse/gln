@@ -4,7 +4,7 @@
 = partial "partials/hero", locals: { title: dato.about.title, subheading: dato.about.kicker, subtitle: dato.about.abstract }
 
 .wrap
-  section.section.space--top-2
+  section.section
     .formatted-content= markdown(dato.about.text)
 
 = partial "partials/cta"

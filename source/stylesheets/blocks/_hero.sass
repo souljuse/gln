@@ -4,15 +4,13 @@
   background-color: $bg-color
   background-size: cover
   position: relative
-  min-height: 80vh
+  min-height: 100vh
   i.icon--arrow-down
     +font-size(beta)
     position: absolute
-    bottom: 10px
+    bottom: 10vh
     left: 50%
     transform: translateX(-50%)
-    +at-breakpoint(tab)
-      +font-size(alpha)
 
 .hero__subheading, .hero__heading, .hero__text
   color: $primary-color
@@ -51,7 +49,7 @@
 
 .hero--home
   @extend .hero
-  min-height: 85vh
+  min-height: 90vh
   .hero__background
     background-image: image-url('logo-white.svg')
 
