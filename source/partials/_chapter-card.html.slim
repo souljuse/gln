@@ -7,4 +7,4 @@ section.card--vertical
   .card__spacer
     h6.card__content__title.with-gradient = chapter.title
     .card__content__text= chapter.excerpt
-    .align--center= link_to "Vai al capitolo", "/regolamento/#{chapter.slug}.html", class: "button card__content__button"
+    .align--center= link_to "Vai al capitolo", "/#{parent}/#{chapter.slug}.html", class: "button card__content__button"

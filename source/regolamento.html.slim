@@ -8,6 +8,6 @@
   .grid--center
     - dato.rule_chapters.each_with_index do |chapter, i|
       .grid__item.lap-6-12.desk-4-12.medium-3-12
-        = partial "partials/chapter-card", locals: {chapter: chapter, index: i}
+        = partial "partials/chapter-card", locals: {chapter: chapter, index: i, parent: "regolamento"}
 
 = partial "partials/cta"

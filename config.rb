@@ -51,10 +51,18 @@ dato.tap do |dato|
   # paginate dato.rule_chapters.sort_by(&:title), "/regolamento", "/templates/chapter.html", per_page: 20
 
   dato.rule_chapters.each do |chapter|
-    proxy "/regolamento/#{chapter.slug}.html", "/templates/chapter.html", locals: { chapter: chapter }, :layout => "layout"
+    proxy "/regolamento/#{chapter.slug}.html", "/templates/chapter.html", locals: { chapter: chapter, parent: "regolamento" }, :layout => "layout"
 
     chapter.subchapters.each do |sub|
-      proxy "/regolamento/#{chapter.slug}/#{sub.slug}.html", "/templates/subchapter.html", locals: { chapter: sub }, :layout => "layout"
+      proxy "/regolamento/#{chapter.slug}/#{sub.slug}.html", "/templates/subchapter.html", locals: { chapter: sub, parent: "regolamento" }, :layout => "layout"
+    end
+  end
+
+  dato.settings_chapters.each do |chapter|
+    proxy "/ambientazione/#{chapter.slug}.html", "/templates/chapter.html", locals: { chapter: chapter, parent: "ambientazione" }, :layout => "layout"
+
+    chapter.subchapters.each do |sub|
+      proxy "/ambientazione/#{chapter.slug}/#{sub.slug}.html", "/templates/subchapter.html", locals: { chapter: sub, parent: "ambientazione" }, :layout => "layout"
     end
   end
 end

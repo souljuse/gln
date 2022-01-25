@@ -9,8 +9,13 @@
       .main-nav__first__item
         = link_to 'Chi siamo', "/chi-siamo", class: "main-nav__link"
 
+
       .main-nav__first--nested
-        = link_to 'Foto', "/foto", class: "main-nav__link"
+        = link_to 'ambientazione', "/ambientazione", class: "main-nav__link"
+        .main-nav__nested
+          - dato.settings_chapters.each do |chapter|
+            .main-nav__nested__item
+              = link_to chapter.title, "/ambientazione/#{chapter.slug}.html", class: "main-nav__link"
 
       .main-nav__first--nested
         = link_to 'regolamento', "/regolamento", class: "main-nav__link"
@@ -18,6 +23,9 @@
           - dato.rule_chapters.each do |chapter|
             .main-nav__nested__item
               = link_to chapter.title, "/regolamento/#{chapter.slug}.html", class: "main-nav__link"
+
+      .main-nav__first--nested
+        = link_to 'Foto', "/foto", class: "main-nav__link"
 
       .main-nav__first--nested
         = link_to 'eventi', "/eventi", class: "main-nav__link"
