@@ -13,6 +13,10 @@
       .space--bottom-7
     - if record.item_type.api_key == "header"
       h4.section__title= record.title
+    - if record.item_type.api_key == "table"
+      .space--bottom-4
+      section.section.formatted-content= markdown(record.table)
+      .space--bottom-4
     - if record.item_type.api_key == "download"
       section.section
         a.button--rev [href="#{record.asset.url}" download]

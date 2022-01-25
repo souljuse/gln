@@ -1,19 +1,26 @@
 .table
   width: 100%
   table-layout: fixed
-  background-color: $light-bg-color
+  background-color: $bg-color
   border-radius: 3px
   +padding(2)
+  color: $white-color !important
+
+  p, span
+    color: $white-color !important
 
   td, th
     text-align: left
     +padding(1)
+    color: $white-color !important
+    border-color: $border-color !important
+
 
   th
     +heading-font-family
     font-variant: small-caps
     text-transform: uppercase
-    border-bottom: 1px solid $border-color
+    border-bottom: 1px solid $border-color !important
 
 +at-breakpoint(lte-lap)
   .table
@@ -46,7 +53,6 @@
         border-bottom-width: 0
 
       &:before
-        color: $light-body-color
         +font-size(milli)
         content: attr(data-title)
         font-variant: small-caps
