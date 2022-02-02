@@ -19,7 +19,9 @@
       .space--bottom-4
     - if record.item_type.api_key == "download"
       section.section
-        a.button--rev [href="#{record.asset.url}" download]
-          = record.name
+        .site-cta 
+          p Puoi scaricare il file relativo cliccando sul bottone
+          a [href="#{record.asset.url}" download]
+            = "Scarica #{record.name}"
 
 = partial "partials/cta"

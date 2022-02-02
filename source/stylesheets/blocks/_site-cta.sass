@@ -1,3 +1,13 @@
 .site-cta
-  color: $rev-body-color
-  background-color: $rev-bg-color
+  color: $black-color
+  background-color: $white-color
+  +padding(3)
+  border-radius: 3px
+  text-align: center
+  p
+    text-align: left
+    +margin-bottom(3)
+    font-weight: bold
+
+  a
+    @extend .button--rev
