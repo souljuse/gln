@@ -6,6 +6,5 @@
         h2.with-gradient = event.name
       .space--top-2.card__item--label__content__text
         .formatted-content
-          p= event.address
-          p= dato.contacts_page.phone_number
+          p= link_to dato.contacts_page.phone_number
           p= link_to dato.contacts_page.email,"mailto:#{dato.contacts_page.email}", target: "_blank"

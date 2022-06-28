@@ -1,10 +1,10 @@
-section.card--vertical
-  - if index.even?
-    .card__item--text__bg--right
-  - else
-    .card__item--text__bg--left
+= link_to "/#{parent}/#{chapter.slug}/#{sub.slug}.html"
+  section.card--vertical
+    - if index.even?
+      .card__item--text__bg--right
+    - else
+      .card__item--text__bg--left
 
-  .card__spacer
-    .card__content__kicker= sub.excerpt
-    h6.card__content__title.with-gradient = sub.title
-    .align--center= link_to "Vai al sottocapitolo", "/#{parent}/#{chapter.slug}/#{sub.slug}.html", class: "button card__content__button"
+    .card__spacer
+      .card__content__kicker= sub.excerpt
+      h6.card__content__title.with-gradient = sub.title

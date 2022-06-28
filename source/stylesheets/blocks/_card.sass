@@ -89,11 +89,13 @@
   background-color: #121212
   border-radius: 3px
   position: relative
-  min-height: 400px
+  min-height: 300px
   .card__spacer
     +center
   .card__item--text
     +padding(4)
+  &:hover
+    opacity: .6
 
 .card__item--text__bg--right
   +position(absolute, 0 0 0 0)
@@ -101,8 +103,10 @@
   background-repeat: no-repeat
   background-position: -100% center
   background-size: 400px
+  opacity: .2
 
 .card__item--text__bg--left
+  opacity: .2
   +position(absolute, 0 0 0 0)
   background-image: image-url('logo-light.svg')
   background-repeat: no-repeat
@@ -117,15 +121,12 @@
     direction: ltr
 
 .card--horizontal--map
-  direction: rtl
-  vertical-align: top
   .card__item--map, .card__item--label
     min-height: 400px
 
   .card__item--map
     +at-breakpoint(desk)
-      display: inline-block
-      width: 70%
+      width: 100%
       vertical-align: top
   .card__item--label
     position: relative

@@ -19,13 +19,12 @@
   .space--bottom-6
 
   section
-    h5.section__title I prossimi eventi
+    h5.section__title Tutti gli eventi
     .space--bottom-6
 
     .grid--center
       - dato.events.each_with_index do |event, i|
-        - if i < 3
-          .grid__item.lap-6-12
-            = partial "partials/event-card", locals: {event: event, index: i}
+        .grid__item.lap-6-12
+          = partial "partials/event-card", locals: {event: event, index: i}
 
 = partial "partials/cta"

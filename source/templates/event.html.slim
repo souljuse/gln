@@ -7,8 +7,13 @@
   .hero style="background-image: url('#{event.cover.url}')"
   .space--bottom-5
   .space--bottom-5: .align--center: i.icon--arrow-down.with-gradient
-  .section.formatted-content= markdown(event.description)
-  .space--bottom-5
+  .section.formatted-content
+    = markdown(event.description)
+    - if event.gallery
+      .align--center 
+        = link_to "Vedi le foto dell'evento", "/foto/#{event.gallery.slug}.html", class:"button--primary js-cta"
+
+  .space--bottom-7
 
   .section__title Dove si svolge l'evento?
   .space--bottom-5
