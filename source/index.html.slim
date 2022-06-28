@@ -6,14 +6,23 @@
 
 .wrap
   section
-    .card--horizontal
+    .space--bottom-5.section__title Il prossimo evento
+    .space--bottom-7.card--horizontal
+      - next_event = dato.events[0]
+      .card__item--image style="background-image: url('#{next_event.cover.url(w: 680, h: 500, fit: 'crop')}')"
+      .card__item--text
+        .card__content
+          .card__content__kicker Il nostro prossimo evento
+          h6.card__content__title.with-gradient = next_event.name
+          .align--center= link_to "Vai all'evento", "/eventi/#{next_event.slug}", class: "button card__content__button"
+    .space--bottom-5.section__title Chi siamo
+    .space--bottom-7.card--horizontal
       - about_image_url = dato.about.featured_image.url(w: 680, h: 500, fit: 'crop')
       .card__item--image style="background-image: url('#{about_image_url}')"
       .card__item--text
         .card__content
-          .card__content__kicker Scopri di più
-          h6.card__content__title.with-gradient Associazione Gruppo Luce Nera
-          .align--center= link_to "Chi siamo", "/chi-siamo", class: "button card__content__button"
+          h6.card__content__title.with-gradient Il lato oscuro del gioco di ruolo dal vivo
+          .align--center= link_to "Scopri di più", "/chi-siamo", class: "button card__content__button"
 
 
   .space--bottom-6

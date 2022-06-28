@@ -1,14 +1,16 @@
 - image_url = event.cover.url(w: 660, h: 400, fit: 'crop')
 
-section.card--vertical
-  .card__item--image style="background-image: url('#{image_url}')"
-  .card__item--text
-    - if index.even?
-      .card__item--text__bg--right
-    - else
-      .card__item--text__bg--left
+section
+  = link_to "/eventi/#{event.slug}.html"
+    .card--vertical
+      .card__item--image style="background-image: url('#{image_url}')"
+      .card__item--text
+        - if index.even?
+          .card__item--text__bg--right
+        - else
+          .card__item--text__bg--left
 
-    .card__spacer
-      .card__content__kicker= "Eventi"
-      h6.card__content__title.with-gradient = event.name
-      .align--center= link_to "Vai all'evento", "/eventi/#{event.slug}.html", class: "button card__content__button"
+        .card__spacer
+          .card__content__kicker= "Eventi"
+          h6.card__content__title.with-gradient = event.name
+          .align--center
