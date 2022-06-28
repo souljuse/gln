@@ -120,34 +120,33 @@
   .card__item--text
     direction: ltr
 
-.card--horizontal--map
-  .card__item--map, .card__item--label
-    min-height: 400px
+.card__item--map, .card__item--label
+  min-height: 400px
 
-  .card__item--map
-    +at-breakpoint(desk)
-      width: 100%
-      vertical-align: top
-  .card__item--label
-    position: relative
-    text-align: left
-    +at-breakpoint(desk)
-      width: 30%
-      display: inline-block
-      vertical-align: top
-  .card__item--label
-    direction: ltr
-    text-align: left
-    position: relative
+.card__item--map
+  +at-breakpoint(desk)
+    width: 100%
+    vertical-align: top
+.card__item--label
+  position: relative
+  text-align: left
+  +at-breakpoint(desk)
+    width: 30%
+    display: inline-block
+    vertical-align: top
+.card__item--label
+  direction: ltr
+  text-align: left
+  position: relative
 
-  .card__item--label__content
-    +horizontal-padding(4)
-    +center-vertically
+.card__item--label__content
+  +horizontal-padding(4)
 
-  .card__item--label__content__title
-    text-transform: uppercase
-    +heading-font-family
+.card__item--label__content__title
+  +font-size(gamma)
+  text-transform: uppercase
+  +heading-font-family
 
-  .card__item--label__content__text
-    a
-      color: $primary-color
+.card__item--label__content__text
+  a
+    color: $primary-color

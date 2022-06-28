@@ -8,9 +8,9 @@
     form.form#contacts-form
       fieldset: .align--center: .space--both-2: .formatted-content
         h4.with-gradient= dato.site.name
-        = dato.contacts_page.phone_number
-        br
-        = link_to dato.contacts_page.email,"mailto:#{dato.contacts_page.email}", target: "_blank"
+        p= link_to "Oppure Contattaci su Facebook", dato.contacts_page.phone_number, target: "_blank"
+        p= link_to "Scrivici una mail a #{dato.contacts_page.email}","mailto:#{dato.contacts_page.email}", target: "_blank"
+
 
       hr
       fieldset

@@ -1,10 +1,10 @@
-.wrap: .space--both-4: section.card--horizontal--map
-  .card__item--map#map data-lat="#{event.location.latitude}" data-lon="#{event.location.longitude}"
-  .card__item--label
-    .card__item--label__content
-      .card__item--label__content__title
-        h2.with-gradient = event.name
-      .space--top-2.card__item--label__content__text
-        .formatted-content
-          p= link_to dato.contacts_page.phone_number
-          p= link_to dato.contacts_page.email,"mailto:#{dato.contacts_page.email}", target: "_blank"
+.space--top-7
+  h2.section__title Vuoi iscriverti?
+.space--top-2
+  p= link_to "Scrivici una mail a #{dato.contacts_page.email}","mailto:#{dato.contacts_page.email}", target: "_blank"
+
+.space--top-7
+.section__title Dove si svolge l'evento?
+.space--top-2
+.card__item--map#map data-lat="#{event.location.latitude}" data-lon="#{event.location.longitude}"
+

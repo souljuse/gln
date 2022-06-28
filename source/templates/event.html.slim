@@ -11,13 +11,8 @@
     = markdown(event.description)
     - if event.gallery
       .align--center 
-        = link_to "Vedi le foto dell'evento", "/foto/#{event.gallery.slug}.html", class:"button--primary js-cta"
+        = link_to "Guarda le foto dell'evento", "/foto/#{event.gallery.slug}.html", class:"button--primary js-cta"
 
-  .space--bottom-7
-
-  .section__title Dove si svolge l'evento?
-  .space--bottom-5
   = partial "partials/location-card", locals: {event: event}
-  .space--bottom-5
 
 = partial "partials/cta"
